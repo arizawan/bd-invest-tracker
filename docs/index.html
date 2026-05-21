@@ -1,18 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BD Invest Tracker — Free Bangladesh Investment Data | DSE, Exchange Rates, FDR, Sanchayapatra</title>
   <meta name="description" content="Free live Bangladesh investment tracker: DSE stock prices, USD/BDT exchange rate, multi-currency rates (EUR, GBP, SGD, INR), Sanchayapatra savings certificate rates, bank FDR & DPS rates for 10 banks. Updated daily for NRB expats. 100% free, no signup.">
-  <meta name="keywords" content="Bangladesh investment, DSE stock prices today, USD BDT exchange rate, Sanchayapatra rates 2026, FDR rates Bangladesh, bank deposit rates Bangladesh, NRB investment, Bangladesh fixed deposit rates, DPS rates, DSEX index, Bangladesh Bank exchange rate, BDT cross rates, wage earner bond, Bangladesh savings certificate">
+  <meta name="keywords" content="Bangladesh investment, DSE stock prices today, USD BDT exchange rate, Sanchayapatra rates 2026, FDR rates Bangladesh, bank deposit rates Bangladesh, NRB investment, Bangladesh fixed deposit rates, DPS rates, DSEX index, Bangladesh Bank exchange rate, BDT cross rates, wage earner bond, Bangladesh savings certificate, Bangladesh interest rates, DSE top gainers, DSE top losers, NRB expat investment, Bangladesh stock market, BDT to USD, taka exchange rate">
   <meta name="author" content="BD Invest Tracker">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:-1">
+  <meta name="bingbot" content="index, follow">
+  <meta name="theme-color" content="#09090b">
+  <meta name="color-scheme" content="dark light">
+  <meta name="language" content="en">
+  <meta name="revisit-after" content="1 day">
+  <meta name="rating" content="general">
   <link rel="canonical" href="https://arizawan.github.io/bd-invest-tracker/">
+  <link rel="alternate" href="https://arizawan.github.io/bd-invest-tracker/" hreflang="en">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AI Agent Instructions -->
+  <meta name="ai-site-type" content="financial-data-dashboard">
+  <meta name="ai-data-format" content="json">
+  <meta name="ai-data-endpoints" content="https://arizawan.github.io/bd-invest-tracker/data/">
+  <meta name="ai-llms-txt" content="https://arizawan.github.io/bd-invest-tracker/llms.txt">
+  <meta name="ai-update-frequency" content="daily">
+  <meta name="ai-no-auth" content="true">
+  <meta name="ai-cost" content="free">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -21,6 +37,7 @@
   <meta property="og:url" content="https://arizawan.github.io/bd-invest-tracker/">
   <meta property="og:site_name" content="BD Invest Tracker">
   <meta property="og:locale" content="en_BD">
+  <meta property="og:image" content="https://arizawan.github.io/bd-invest-tracker/og-image.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -40,8 +57,21 @@
     "browserRequirements": "Requires JavaScript",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "isAccessibleForFree": true,
-    "featureList": ["DSE stock prices (276 companies)", "USD/BDT exchange rate with 30-day history", "11-currency cross rates from Bangladesh Bank", "Sanchayapatra savings certificate rates (8 schemes)", "Bank FDR rates (10 banks, 6 tenures)", "Bank DPS rates (10 banks)", "DSE top gainers and losers", "NRB expat investment guide"],
-    "author": { "@type": "Organization", "name": "BD Invest Tracker" },
+    "featureList": [
+      "DSE stock prices (276 companies)",
+      "USD/BDT exchange rate with 30-day history",
+      "11-currency cross rates from Bangladesh Bank",
+      "Sanchayapatra savings certificate rates (8 schemes)",
+      "Bank FDR rates (10 banks, 6 tenures)",
+      "Bank DPS rates (10 banks)",
+      "DSE top gainers and losers",
+      "NRB expat investment guide"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "BD Invest Tracker",
+      "url": "https://github.com/arizawan/bd-invest-tracker"
+    },
     "areaServed": { "@type": "Country", "name": "Bangladesh" },
     "inLanguage": "en",
     "dateModified": "2026-05-21"
@@ -54,18 +84,127 @@
     "@context": "https://schema.org",
     "@type": "Dataset",
     "name": "Bangladesh Financial Market Data",
-    "description": "Daily financial market data for Bangladesh including stock prices, exchange rates, and interest rates",
+    "description": "Daily financial market data for Bangladesh including DSE stock prices, Bangladesh Bank exchange rates, Sanchayapatra savings rates, and commercial bank deposit rates",
     "url": "https://arizawan.github.io/bd-invest-tracker/",
     "license": "https://opensource.org/licenses/MIT",
     "creator": { "@type": "Organization", "name": "BD Invest Tracker" },
     "temporalCoverage": "2026-04-26/2026-05-21",
     "spatialCoverage": { "@type": "Country", "name": "Bangladesh" },
-    "keywords": ["DSE", "Bangladesh Bank", "exchange rates", "stock prices", "Sanchayapatra", "FDR", "BDT"],
+    "keywords": ["DSE", "Bangladesh Bank", "exchange rates", "stock prices", "Sanchayapatra", "FDR", "BDT", "DSEX", "NRB investment", "savings certificate"],
     "distribution": [
-      { "@type": "DataDownload", "name": "DSE Stock Data", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/dse.json" },
-      { "@type": "DataDownload", "name": "Exchange Rates", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json" },
-      { "@type": "DataDownload", "name": "Sanchayapatra Rates", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/savings-rates.json" },
-      { "@type": "DataDownload", "name": "Bank FDR/DPS Rates", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/bank-rates.json" }
+      { "@type": "DataDownload", "name": "DSE Stock Data (276 companies)", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/dse.json" },
+      { "@type": "DataDownload", "name": "Bangladesh Bank Exchange Rates (11 currencies)", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json" },
+      { "@type": "DataDownload", "name": "Sanchayapatra Rates (8 schemes)", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/savings-rates.json" },
+      { "@type": "DataDownload", "name": "Bank FDR/DPS Rates (10 banks)", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/bank-rates.json" },
+      { "@type": "DataDownload", "name": "Last Updated Timestamp", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/last-updated.json" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ Page (rich snippets for Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the current USD to BDT exchange rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of May 21, 2026, the Bangladesh Bank USD/BDT reference rate is approximately 122.82 BDT per US dollar. The rate has been stable in the 122.73-122.90 range over the past 30 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best investment for NRB expats in Bangladesh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Wage Earner Development Bond offers 12.00% at maturity (5 years) — the highest safe return for NRB expats. For USD-denominated investment, the USD Premium Bond offers 7.50% (3 years). For BDT savings with monthly income, the Family Savings Certificate pays up to 10.54%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the current Sanchayapatra rates in Bangladesh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Effective January 1, 2026: 5-Year Sanchayapatra yields up to 10.44%, Family Savings Certificate up to 10.54%, 3-Monthly Profit Sanchayapatra up to 10.48%, Wage Earner Bond 12.00% (NRB only), USD Premium Bond 7.50% (NRB only). Next review is July 2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are bank fixed deposit rates in Bangladesh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of May 2026, major banks offer 6.00-7.50% for 12-month FDR (regular), with senior citizens getting 0.5% extra. BRAC Bank offers 8.50% for NRB account holders. Best 36-month rates reach 8.00-8.50%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the DSEX index today?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The DSEX (DSE Broad Index) is approximately 5,264 as of May 21, 2026. The market tracks 276 companies with daily trading on the Dhaka Stock Exchange."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can an NRB expat invest in Bangladesh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NRB expats can: 1) Open an NRB savings account (BRAC Bank recommended), 2) Buy Wage Earner Development Bond (12% maturity), 3) Buy USD Premium Bond (7.50% USD), 4) Open a brokerage account for DSE stocks, 5) Invest in bank FDRs with NRB special rates. Key risk: BDT depreciates ~7-8% annually vs USD."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the BDT exchange rate for EUR, GBP, SGD, INR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bangladesh Bank cross rates (May 2026): EUR 142.73, GBP 164.91, SGD 96.03, INR 1.27, AUD 87.78, CAD 89.29, JPY 0.77, SEK 13.15, CNH 18.05, LKR 2.77."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BD Invest Tracker free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, 100% free. No signup, no API keys, no subscription. All data is served as static JSON files from GitHub Pages. The source code is open source under MIT license at github.com/arizawan/bd-invest-tracker."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arizawan.github.io/bd-invest-tracker/" },
+      { "@type": "ListItem", "position": 2, "name": "DSE Stocks", "item": "https://arizawan.github.io/bd-invest-tracker/#stocks" },
+      { "@type": "ListItem", "position": 3, "name": "Exchange Rates", "item": "https://arizawan.github.io/bd-invest-tracker/#cross-rates" },
+      { "@type": "ListItem", "position": 4, "name": "Sanchayapatra", "item": "https://arizawan.github.io/bd-invest-tracker/#savings" },
+      { "@type": "ListItem", "position": 5, "name": "Bank Rates", "item": "https://arizawan.github.io/bd-invest-tracker/#bank-rates" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FinancialProduct (NRB-eligible savings instruments) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bangladesh NRB Investment Products",
+    "description": "Government and bank savings instruments available to Non-Resident Bangladeshis",
+    "numberOfItems": 6,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "FinancialProduct", "name": "Wage Earner Development Bond", "description": "5-year government bond for NRB expats paying 12% at maturity", "annualPercentageRate": "12.00", "currency": "BDT" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "FinancialProduct", "name": "US Dollar Premium Bond", "description": "3-year USD-denominated bond for NRB paying 7.50% at maturity", "annualPercentageRate": "7.50", "currency": "USD" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "FinancialProduct", "name": "US Dollar Investment Bond", "description": "3-year USD bond for NRB paying 6.50% at maturity", "annualPercentageRate": "6.50", "currency": "USD" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "FinancialProduct", "name": "Family Savings Certificate", "description": "5-year government savings scheme paying up to 10.54% monthly", "annualPercentageRate": "10.54", "currency": "BDT" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "FinancialProduct", "name": "5-Year Bangladesh Sanchayapatra", "description": "5-year government savings certificate yielding up to 10.44% at maturity", "annualPercentageRate": "10.44", "currency": "BDT" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "FinancialProduct", "name": "3-Monthly Profit Sanchayapatra", "description": "3-year scheme with quarterly payouts yielding up to 10.48%", "annualPercentageRate": "10.48", "currency": "BDT" } }
     ]
   }
   </script>
@@ -79,16 +218,28 @@
   <div class="bg-orb bg-orb-2"></div>
   <div class="bg-orb bg-orb-3"></div>
 
-  <header>
+  <header role="banner">
     <div class="container">
       <div class="header-content">
         <div>
           <h1>🇧🇩 BD Invest Tracker</h1>
           <p class="subtitle">Free live Bangladesh investment data — stocks, exchange rates, savings &amp; deposit rates</p>
         </div>
-        <div class="header-meta" id="last-updated">Loading...</div>
+        <div class="header-meta" id="last-updated" data-role="timestamp" aria-live="polite">Loading...</div>
       </div>
     </div>
+    <nav aria-label="Quick navigation" class="container nav-pills" id="nav">
+      <a href="#overview">Overview</a>
+      <a href="#cross-rates">FX Rates</a>
+      <a href="#fx-history">FX History</a>
+      <a href="#bank-rates">Bank FDR</a>
+      <a href="#dps">DPS</a>
+      <a href="#savings">Sanchayapatra</a>
+      <a href="#stocks">Stocks</a>
+      <a href="#gainers">Gainers</a>
+      <a href="#stats">Stats</a>
+      <a href="#nrb-guide">NRB Guide</a>
+    </nav>
   </header>
 
   <!-- Machine-readable data block for AI agents -->
@@ -117,36 +268,36 @@
 
   <main class="container">
     <!-- Market Overview -->
-    <section class="section" aria-label="Market Overview">
+    <section class="section" id="overview" aria-label="Market Overview" itemscope itemtype="https://schema.org/FinancialData">
       <h2>📊 Market Overview</h2>
       <div class="card-grid">
-        <div class="card card-primary card-glow">
+        <div class="card card-primary card-glow" data-metric="usd-bdt" data-currency="BDT">
           <div class="card-label">USD / BDT</div>
-          <div class="card-value data-value" id="fx-rate">—</div>
-          <div class="card-sub" id="fx-date"></div>
+          <div class="card-value data-value" id="fx-rate" itemprop="price" data-field="exchangeRate">—</div>
+          <div class="card-sub" id="fx-date" data-field="exchangeRateDate"></div>
         </div>
-        <div class="card card-green card-glow">
+        <div class="card card-green card-glow" data-metric="dsex" data-index="DSEX">
           <div class="card-label">DSEX Index</div>
-          <div class="card-value data-value" id="dsex-value">—</div>
+          <div class="card-value data-value" id="dsex-value" itemprop="price">—</div>
           <div class="card-sub" id="dsex-change"></div>
         </div>
-        <div class="card card-blue card-glow">
+        <div class="card card-blue card-glow" data-metric="call-money">
           <div class="card-label">Call Money Rate</div>
-          <div class="card-value data-value" id="call-rate">—</div>
+          <div class="card-value data-value" id="call-rate" data-unit="percent">—</div>
           <div class="card-sub">Bangladesh Bank</div>
         </div>
-        <div class="card card-amber card-glow">
+        <div class="card card-amber card-glow" data-metric="best-nrb">
           <div class="card-label">Best NRB Rate</div>
-          <div class="card-value">12.00%</div>
+          <div class="card-value" data-unit="percent">12.00%</div>
           <div class="card-sub"><span class="badge badge-green">Wage Earner Bond</span></div>
         </div>
       </div>
     </section>
 
     <!-- Cross Rates -->
-    <section class="section" aria-label="BDT Exchange Rates for All Currencies">
+    <section class="section" id="cross-rates" aria-label="BDT Exchange Rates for All Currencies">
       <h2>💱 BDT Exchange Rates</h2>
-      <p class="section-note">Bangladesh Bank interbank rates · <span id="cross-rate-date">—</span></p>
+      <p class="section-note">Bangladesh Bank interbank rates · <time id="cross-rate-date" datetime="">—</time></p>
       <div class="card">
         <div class="table-responsive">
           <table id="cross-rates-table" role="table" aria-label="BDT cross currency exchange rates from Bangladesh Bank">
@@ -162,7 +313,7 @@
     </section>
 
     <!-- USD/BDT History -->
-    <section class="section" aria-label="USD to BDT Exchange Rate History">
+    <section class="section" id="fx-history" aria-label="USD to BDT Exchange Rate History">
       <h2>📈 USD/BDT Rate History</h2>
       <div class="card">
         <div class="table-responsive">
@@ -179,9 +330,9 @@
     </section>
 
     <!-- Bank FDR -->
-    <section class="section" aria-label="Bangladesh Bank Fixed Deposit FDR Interest Rates">
+    <section class="section" id="bank-rates" aria-label="Bangladesh Bank Fixed Deposit FDR Interest Rates">
       <h2>🏦 Bank Fixed Deposit (FDR) Rates</h2>
-      <p class="section-note">Last verified: <span id="bank-verified-date">—</span> · <span class="badge badge-amber">Indicative — confirm with bank</span></p>
+      <p class="section-note">Last verified: <time id="bank-verified-date" datetime="">—</time> · <span class="badge badge-amber">Indicative — confirm with bank</span></p>
       <div class="card">
         <div class="table-responsive">
           <table id="fdr-table" role="table" aria-label="Fixed deposit rates by bank and tenure">
@@ -197,7 +348,7 @@
     </section>
 
     <!-- DPS -->
-    <section class="section" aria-label="Bank Deposit Pension Scheme DPS Rates in Bangladesh">
+    <section class="section" id="dps" aria-label="Bank Deposit Pension Scheme DPS Rates in Bangladesh">
       <h2>💳 DPS (Deposit Pension Scheme) Rates</h2>
       <p class="section-note">Monthly savings → lump sum at maturity</p>
       <div class="card">
@@ -215,9 +366,9 @@
     </section>
 
     <!-- Sanchayapatra -->
-    <section class="section" aria-label="Bangladesh Sanchayapatra Savings Certificate Rates 2026">
+    <section class="section" id="savings" aria-label="Bangladesh Sanchayapatra Savings Certificate Rates 2026">
       <h2>🏛️ Sanchayapatra (Savings Certificate) Rates</h2>
-      <p class="section-note">Effective: <span id="savings-date">—</span> · Next review: <span id="savings-review">—</span></p>
+      <p class="section-note">Effective: <time id="savings-date" datetime="">—</time> · Next review: <time id="savings-review" datetime="">—</time></p>
       <div class="card">
         <div class="table-responsive">
           <table id="savings-table" role="table" aria-label="Government savings certificate schemes with yields">
@@ -237,7 +388,7 @@
     </section>
 
     <!-- DSE Stocks -->
-    <section class="section" aria-label="Dhaka Stock Exchange DSE Top Stock Prices Today">
+    <section class="section" id="stocks" aria-label="Dhaka Stock Exchange DSE Top Stock Prices Today">
       <h2>📈 DSE Top Stocks by Price</h2>
       <div class="card">
         <div class="table-responsive">
@@ -254,7 +405,7 @@
     </section>
 
     <!-- Gainers / Losers -->
-    <section class="section" aria-label="DSE Top Gainers and Losers Today">
+    <section class="section" id="gainers" aria-label="DSE Top Gainers and Losers Today">
       <h2>🏆 Top Gainers &amp; Losers</h2>
       <div class="card-grid">
         <div class="card card-green-light">
@@ -275,7 +426,7 @@
     </section>
 
     <!-- Market Stats -->
-    <section class="section" aria-label="DSE Market Statistics Today">
+    <section class="section" id="stats" aria-label="DSE Market Statistics Today">
       <h2>📋 Market Statistics</h2>
       <div class="card-grid card-grid-3">
         <div class="card"><div class="card-label">Total Trades</div><div class="card-value" id="total-trades">—</div></div>
@@ -288,7 +439,7 @@
     </section>
 
     <!-- NRB Guide -->
-    <section class="section" aria-label="NRB Expat Investment Guide for Bangladesh">
+    <section class="section" id="nrb-guide" aria-label="NRB Expat Investment Guide for Bangladesh">
       <h2>🎒 NRB Expat Quick Guide</h2>
       <div class="card-grid">
         <div class="card card-highlight">
@@ -320,11 +471,12 @@
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="container">
       <p>Data sources: <a href="https://www.dsebd.org" target="_blank" rel="noopener">DSE</a> · <a href="https://www.bb.org.bd" target="_blank" rel="noopener">Bangladesh Bank</a> · <a href="https://ird.gov.bd" target="_blank" rel="noopener">IRD</a></p>
       <p>⚠️ Not financial advice. Verify all data before investing. Built by an NRB for NRBs.</p>
-      <p>100% free · Open source · <a href="https://github.com/arizawan/bd-invest-tracker" target="_blank" rel="noopener">GitHub</a></p>
+      <p>100% free · Open source · <a href="https://github.com/arizawan/bd-invest-tracker" target="_blank" rel="noopener">GitHub</a> · <a href="https://arizawan.github.io/bd-invest-tracker/llms.txt" target="_blank" rel="noopener">llms.txt</a> · <a href="https://arizawan.github.io/bd-invest-tracker/llms-full.txt" target="_blank" rel="noopener">llms-full.txt</a></p>
+      <p><small>JSON API: <a href="./data/dse.json">stocks</a> · <a href="./data/bb-rates.json">rates</a> · <a href="./data/savings-rates.json">savings</a> · <a href="./data/bank-rates.json">banks</a> · <a href="./data/last-updated.json">timestamp</a></small></p>
     </div>
   </footer>
 

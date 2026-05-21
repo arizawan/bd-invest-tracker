@@ -125,6 +125,39 @@ header .subtitle {
   font-variant-numeric: tabular-nums;
 }
 
+/* ── Navigation Pills ── */
+.nav-pills {
+  display: flex;
+  gap: 6px;
+  padding: 10px 0 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.nav-pills::-webkit-scrollbar { display: none; }
+.nav-pills a {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  background: rgba(39, 39, 42, 0.4);
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+.nav-pills a:hover {
+  color: var(--text);
+  background: rgba(39, 39, 42, 0.8);
+  border-color: var(--border-bright);
+}
+
+@media (max-width: 640px) {
+  .nav-pills { padding-bottom: 4px; }
+  .nav-pills a { font-size: 0.68rem; padding: 3px 8px; }
+}
+
 /* ── Sections ── */
 .section { margin-bottom: 40px; }
 .section h2 {

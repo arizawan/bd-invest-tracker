@@ -1,0 +1,119 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "BD Invest Tracker API",
+    "description": "Free Bangladesh financial market data. No authentication required. All endpoints return static JSON files.",
+    "version": "1.0.0",
+    "contact": { "name": "BD Invest Tracker", "url": "https://github.com/arizawan/bd-invest-tracker" },
+    "license": { "name": "MIT", "url": "https://opensource.org/licenses/MIT" }
+  },
+  "servers": [{ "url": "https://arizawan.github.io/bd-invest-tracker" }],
+  "paths": {
+    "/data/dse.json": {
+      "get": {
+        "summary": "DSE Stock Data",
+        "description": "Dhaka Stock Exchange data: 276 stock prices (code, LTP, change, change%, direction), DSEX/DS30/DSES index values, market summary, top gainers and losers. Updated daily on trading days.",
+        "operationId": "getDSEData",
+        "responses": {
+          "200": {
+            "description": "DSE market data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "fetchedAt": { "type": "string", "format": "date-time" },
+                    "indices": {
+                      "type": "object",
+                      "properties": {
+                        "DSEX": { "type": "number" },
+                        "DS30": { "type": "number" },
+                        "DSES": { "type": "number" }
+                      }
+                    },
+                    "summary": {
+                      "type": "object",
+                      "properties": {
+                        "totalTrade": { "type": "integer" },
+                        "totalVolume": { "type": "integer" },
+                        "totalValueMn": { "type": "number" },
+                        "advanced": { "type": "integer" },
+                        "declined": { "type": "integer" },
+                        "unchanged": { "type": "integer" }
+                      }
+                    },
+                    "topStocks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": { "type": "string" },
+                          "ltp": { "type": "number" },
+                          "change": { "type": "number" },
+                          "changePct": { "type": "number" },
+                          "direction": { "type": "string", "enum": ["up", "down", "neutral"] }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data/bb-rates.json": {
+      "get": {
+        "summary": "Exchange Rates & Money Market",
+        "description": "Bangladesh Bank data: USD/BDT reference rate (AM+PM), 30-day rate history, 11-currency cross rates (EUR, GBP, AUD, JPY, CAD, SEK, SGD, CNH, INR, LKR, USD), call money rate. Updated daily.",
+        "operationId": "getExchangeRates",
+        "responses": {
+          "200": {
+            "description": "Exchange rate and money market data",
+            "content": { "application/json": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/data/savings-rates.json": {
+      "get": {
+        "summary": "Sanchayapatra Savings Certificate Rates",
+        "description": "Government savings certificate rates for 8 schemes: 5-Year Sanchayapatra, 3-Monthly Profit, Pensioner, Family Savings, Wage Earner Bond, USD Premium Bond, USD Investment Bond, Post Office. With tiered rates by investment amount. Effective Jan 1, 2026.",
+        "operationId": "getSavingsRates",
+        "responses": {
+          "200": {
+            "description": "Sanchayapatra rates data",
+            "content": { "application/json": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/data/bank-rates.json": {
+      "get": {
+        "summary": "Bank FDR & DPS Rates",
+        "description": "Fixed deposit and DPS rates for 10 major banks (BRAC, DBBL, EBL, City, SCB, Sonali, Janata, Agrani, MTB, Pubali) with regular/senior rates, NRB special rates, and DPS monthly savings details.",
+        "operationId": "getBankRates",
+        "responses": {
+          "200": {
+            "description": "Bank rates data",
+            "content": { "application/json": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/data/last-updated.json": {
+      "get": {
+        "summary": "Data Freshness Timestamp",
+        "description": "ISO timestamp of when data was last fetched. Use to check data freshness before caching.",
+        "operationId": "getLastUpdated",
+        "responses": {
+          "200": {
+            "description": "Last updated timestamp",
+            "content": { "application/json": { "schema": { "type": "object", "properties": { "lastFetch": { "type": "string", "format": "date-time" }, "fetchDate": { "type": "string", "format": "date" } } } } }
+          }
+        }
+      }
+    }
+  }
+}

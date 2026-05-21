@@ -1,0 +1,92 @@
+# BD Invest Tracker
+
+> Free, live Bangladesh investment data dashboard for NRB (Non-Resident Bangladeshi) expats.
+> URL: https://arizawan.github.io/bd-invest-tracker/
+> Updated: Daily (Mon-Sat at 3:30 PM BST / 09:30 UTC)
+> Cost: 100% free, no signup, no API keys
+
+## What This Site Provides
+
+Real-time and daily financial market data for Bangladesh, sourced from DSE, Bangladesh Bank, IRD, and major commercial banks.
+
+## Data Endpoints (JSON)
+
+All endpoints return valid JSON. No authentication required.
+
+### 1. DSE Stock Data
+- **URL**: `https://arizawan.github.io/bd-invest-tracker/data/dse.json`
+- **Contents**: 276 DSE-listed stock prices (code, LTP, change, change%, direction), DSEX/DS30/DSES index values, market summary (trades, volume, value, advanced/declined/unchanged), top gainers, top losers
+- **Schema**:
+  ```json
+  {
+    "fetchedAt": "ISO timestamp",
+    "indices": { "DSEX": number, "DS30": number, "DSES": number },
+    "summary": { "totalTrade": number, "totalVolume": number, "totalValueMn": number, "advanced": number, "declined": number, "unchanged": number },
+    "topStocks": [{ "code": "string", "ltp": number, "change": number, "changePct": number, "direction": "up|down|neutral" }],
+    "topGainers": [...],
+    "topLosers": [...]
+  }
+  ```
+
+### 2. Exchange Rates
+- **URL**: `https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json`
+- **Contents**: USD/BDT reference rate (AM+PM), 30-day rate history, 11-currency cross rates (EUR, GBP, AUD, JPY, CAD, SEK, SGD, CNH, INR, LKR + USD), call money rate
+- **Schema**:
+  ```json
+  {
+    "fetchedAt": "ISO timestamp",
+    "exchangeRate": { "USD_BDT": { "date": "string", "am": number, "pm": number, "history": [{ "date": "string", "am": number, "pm": number }] } },
+    "crossRates": { "CCY": { "bid": number, "ask": number } },
+    "moneyMarket": { "callMoneyRate": "string" }
+  }
+  ```
+
+### 3. Sanchayapatra (Savings Certificate) Rates
+- **URL**: `https://arizawan.github.io/bd-invest-tracker/data/savings-rates.json`
+- **Contents**: 8 government savings schemes with tiered rates (5-year Sanchayapatra, 3-month/5-year Pension Sanchayapatra, Poriborton Chiti, Family Savings, Wage Earner Bond, USD Premium Bond, USD Investment Bond, QIC). Rates effective Jan 1, 2026. Next review Jul 2026.
+- **Schema**:
+  ```json
+  {
+    "effectiveDate": "string", "nextReview": "string", "source": "string",
+    "schemes": { "scheme_key": { "name": "string", "tenure": "string", "payout": "string", "eligibility": "string", "tiers": [{ "label": "string", "flatRate|yearlyRates|maturityRate": number }] } }
+  }
+  ```
+
+### 4. Bank FDR & DPS Rates
+- **URL**: `https://arizawan.github.io/bd-invest-tracker/data/bank-rates.json`
+- **Contents**: Fixed deposit rates for 10 major banks (BRAC, DBBL, EBL, City Bank, Standard Chartered, Sonali, Janata, Agrani, MTB, Pubali) across 5 tenures (3M-36M), DPS rates, NRB special rates
+- **Schema**:
+  ```json
+  {
+    "lastVerified": "string",
+    "banks": { "Bank Name": { "type": "string", "fdr": { "tenure": { "regular": number, "senior": number } }, "dps": { "annualReturn": number, "minMonthly": number, "maxMonthly": number, "tenure": "string" }, "nrb": { "specialFDR": bool, "nrbFdrRate": number } } }
+  }
+  ```
+
+### 5. Last Updated Timestamp
+- **URL**: `https://arizawan.github.io/bd-invest-tracker/data/last-updated.json`
+- **Schema**: `{ "lastFetch": "ISO timestamp", "fetchDate": "YYYY-MM-DD", "fetchTime": "HH:MM:SS" }`
+
+## Key Data Points (as of 2026-05-21)
+
+| Metric | Value |
+|--------|-------|
+| USD/BDT Reference | ~122.82 |
+| DSEX Index | ~5,264 |
+| Call Money Rate | 5% |
+| Best NRB Rate | 12.00% (Wage Earner Development Bond) |
+| Best BDT Savings | 10.54% (Family Savings Certificate) |
+| Best USD Rate | 7.50% (USD Premium Bond) |
+| BDT Annual Depreciation | ~7-8% vs USD |
+| Stocks Tracked | 276 on DSE |
+
+## How to Use This Data
+
+1. **Fetch any JSON endpoint** — no auth, no CORS issues (static files on GitHub Pages)
+2. **Cache locally** — data updates once daily, cache for 24 hours
+3. **Cross-reference** — exchange rates from Bangladesh Bank are official interbank rates; bank FDR rates are indicative
+4. **NRB investors** — look for `nrb` fields in bank-rates.json and NRB-eligible schemes in savings-rates.json
+
+## Source Code
+
+Open source: https://github.com/arizawan/bd-invest-tracker

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "BD Invest Tracker",
+  "name_for_model": "bd_invest_tracker",
+  "description_for_human": "Free Bangladesh investment data: DSE stocks, exchange rates, savings certificates, bank FDR & DPS rates.",
+  "description_for_model": "Provides live Bangladesh financial market data including DSE stock prices (276 companies), USD/BDT and 10-currency exchange rates from Bangladesh Bank, Sanchayapatra savings certificate rates (8 government schemes), and bank fixed deposit & DPS rates for 10 major commercial banks. All data is freely accessible as JSON with no authentication required. Useful for answering questions about Bangladesh investments, exchange rates, and savings instruments, especially for NRB (Non-Resident Bangladeshi) expats.",
+  "auth": { "type": "none" },
+  "api": {
+    "type": "openapi",
+    "url": "https://arizawan.github.io/bd-invest-tracker/.well-known/openapi.json",
+    "has_user_authentication": false
+  },
+  "logo_url": "https://arizawan.github.io/bd-invest-tracker/favicon.svg",
+  "contact_email": "bd-invest-tracker@users.noreply.github.com",
+  "legal_info_url": "https://github.com/arizawan/bd-invest-tracker/blob/main/LICENSE",
+  "url": "https://arizawan.github.io/bd-invest-tracker/"
+}

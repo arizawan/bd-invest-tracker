@@ -1,0 +1,190 @@
+# BD Invest Tracker — Full Data Reference for AI Agents
+
+> This file is intended for LLMs and AI agents.
+> For a concise summary, see /llms.txt
+> Live site: https://arizawan.github.io/bd-invest-tracker/
+> Source code: https://github.com/arizawan/bd-invest-tracker
+
+---
+
+## What Is This Site?
+
+BD Invest Tracker is a free, open-source financial data dashboard for Bangladesh. It serves live market data via static JSON files — no API keys, no authentication, no rate limits. Built for NRB (Non-Resident Bangladeshi) expats who need to track investments back home.
+
+**All data is public and free to use under MIT license.**
+
+---
+
+## JSON API Endpoints
+
+All endpoints are static JSON files served via GitHub Pages. No CORS issues. No auth. Cache for 24 hours.
+
+| Endpoint | URL | Description |
+|----------|-----|-------------|
+| DSE Stocks | https://arizawan.github.io/bd-invest-tracker/data/dse.json | 276 DSE stocks, indices, market summary |
+| Exchange Rates | https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json | USD/BDT + 11 currencies, call money rate |
+| Savings Rates | https://arizawan.github.io/bd-invest-tracker/data/savings-rates.json | 8 Sanchayapatra schemes with tiered rates |
+| Bank Rates | https://arizawan.github.io/bd-invest-tracker/data/bank-rates.json | FDR/DPS rates for 10 banks |
+| Last Updated | https://arizawan.github.io/bd-invest-tracker/data/last-updated.json | Data freshness timestamp |
+
+---
+
+## Current Market Snapshot (2026-05-21)
+
+### Exchange Rates (Bangladesh Bank Interbank)
+
+| Currency | Buy (BDT) | Sell (BDT) | Mid Rate |
+|----------|-----------|------------|----------|
+| USD 🇺🇸 | 122.75 | 122.75 | 122.75 |
+| EUR 🇪🇺 | 142.72 | 142.75 | 142.73 |
+| GBP 🇬🇧 | 164.87 | 164.95 | 164.91 |
+| SGD 🇸🇬 | 95.99 | 96.06 | 96.03 |
+| AUD 🇦🇺 | 87.75 | 87.80 | 87.78 |
+| CAD 🇨🇦 | 89.29 | 89.30 | 89.29 |
+| SEK 🇸🇪 | 13.15 | 13.16 | 13.15 |
+| CNH 🇨🇳 | 18.04 | 18.05 | 18.05 |
+| JPY 🇯🇵 | 0.77 | 0.77 | 0.77 |
+| INR 🇮🇳 | 1.27 | 1.27 | 1.27 |
+| LKR 🇱🇰 | 2.75 | 2.79 | 2.77 |
+
+**Call Money Rate**: 5.00%
+
+### USD/BDT 30-Day History
+
+| Date | AM Rate | PM Rate |
+|------|---------|---------|
+| 21 May 2026 | 122.8156 | — |
+| 20 May 2026 | 122.8347 | 122.7387 |
+| 19 May 2026 | 122.8355 | 122.8280 |
+| 18 May 2026 | 122.8268 | 122.8136 |
+| 17 May 2026 | 122.7808 | 122.7802 |
+| 14 May 2026 | 122.7847 | 122.8391 |
+| 13 May 2026 | 122.7920 | 122.7609 |
+| 12 May 2026 | 122.7939 | 122.7636 |
+| 11 May 2026 | 122.7914 | 122.9002 |
+| 10 May 2026 | 122.7565 | 122.7576 |
+
+### DSE Market Indices
+
+| Index | Value |
+|-------|-------|
+| DSEX | ~5,264 |
+| DSES | ~1,238 |
+
+### Sanchayapatra (Savings Certificate) Rates — Effective Jan 1, 2026
+
+| Scheme | Tenure | Payout | Best Yield | Eligibility |
+|--------|--------|--------|------------|-------------|
+| 5-Year Bangladesh Sanchayapatra | 5 years | On maturity | 10.44% | All citizens |
+| 3-Monthly Profit Basis Sanchayapatra | 3 years | Quarterly | 10.48% | All citizens |
+| Pensioner Sanchayapatra | 5 years | On maturity | 10.59% | Retirees only |
+| Family Savings Certificate | 5 years | Monthly | 10.54% | Families (women prioritized) |
+| **Wage Earner Development Bond** | **5 years** | **On maturity** | **12.00%** | **NRB / Expatriates only** |
+| **US Dollar Premium Bond** | **3 years** | **Periodic** | **7.50% (USD)** | **NRB / Expatriates only** |
+| US Dollar Investment Bond | 3 years | On maturity | 6.50% (USD) | NRB / Expatriates only |
+| Post Office Savings Bank | Ongoing | Annual | 7.50% | All citizens |
+
+**Detailed Sanchayapatra Rates by Tier:**
+
+#### 5-Year Bangladesh Sanchayapatra
+- Up to ৳7.5 Lakh: Yr1=8.76%, Yr2=9.15%, Yr3=9.55%, Yr4=9.98%, Yr5=10.44%
+- Above ৳7.5 Lakh: Yr1=8.74%, Yr2=9.12%, Yr3=9.53%, Yr4=9.96%, Yr5=10.41%
+
+#### 3-Monthly Profit Basis Sanchayapatra
+- Up to ৳7.5 Lakh: Yr1=9.54%, Yr2=10.00%, Yr3=10.48%
+- Above ৳7.5 Lakh: Yr1=9.50%, Yr2=9.95%, Yr3=10.43%
+
+#### Family Savings Certificate (Paribar Sanchayapatra)
+- Up to ৳7.5 Lakh: Yr1=8.83%, Yr2=9.24%, Yr3=9.66%, Yr4=10.09%, Yr5=10.54%
+- Above ৳7.5 Lakh: Yr1=8.74%, Yr2=9.12%, Yr3=9.53%, Yr4=9.96%, Yr5=10.41%
+
+#### Wage Earner Development Bond (NRB Only)
+- Up to ৳15 Lakh: 12.00% at maturity
+- ৳15-30 Lakh: 10.50% at maturity
+- ৳30-50 Lakh: 9.50% at maturity
+- Above ৳50 Lakh: 9.00% at maturity
+
+#### US Dollar Premium Bond (NRB Only)
+- Up to $100,000: Yr1=6.50%, Yr2=7.00%, Yr3=7.50%
+- Above $100,000: Yr1=6.00%, Yr2=6.50%, Yr3=7.00%
+
+#### US Dollar Investment Bond (NRB Only)
+- Up to $25,000: Yr1=5.50%, Yr2=6.00%, Yr3=6.50%
+- Above $25,000: Yr1=5.00%, Yr2=5.50%, Yr3=6.00%
+
+### Bank Fixed Deposit (FDR) Rates (10 Major Banks)
+
+Sorted by 12-month regular rate:
+
+| Bank | Type | 3M | 6M | 12M | 24M | 36M | NRB Special |
+|------|------|----|----|------|------|------|-------------|
+| BRAC Bank | Private | 6.00% | 7.00% | 7.50% | 7.75% | 8.00% | ✓ 8.50% |
+| Dutch-Bangla Bank | Private | 6.00% | 7.00% | 7.50% | 7.75% | 8.00% | ✓ 8.25% |
+| Eastern Bank | Private | 6.00% | 7.00% | 7.50% | 7.75% | 8.00% | — |
+| Sonali Bank | State-owned | 6.00% | 7.00% | 7.50% | 7.75% | 8.00% | ✓ 8.00% |
+| Janata Bank | State-owned | 6.00% | 7.00% | 7.50% | — | 8.00% | — |
+| Agrani Bank | State-owned | 6.00% | 7.00% | 7.50% | — | 8.00% | — |
+| City Bank | Private | 6.00% | 7.00% | 7.50% | 7.75% | — | — |
+| MTB (Mutual Trust) | Private | 6.00% | 7.00% | 7.50% | 7.75% | — | — |
+| Pubali Bank | Private | 6.00% | 7.00% | 7.50% | — | — | — |
+| Standard Chartered | Foreign | 5.50% | 6.50% | 7.00% | 7.25% | — | — |
+
+### Bank DPS (Deposit Pension Scheme) Rates
+
+| Bank | Annual Return | Min/Month | Max/Month | Tenure |
+|------|--------------|-----------|-----------|--------|
+| Eastern Bank | 7.50% | ৳500 | ৳50,000 | 5-10 years |
+| Dutch-Bangla Bank | 7.25% | ৳500 | ৳50,000 | 5-10 years |
+| City Bank | 7.25% | ৳500 | ৳50,000 | 5-10 years |
+| BRAC Bank | 7.00% | ৳500 | ৳50,000 | 5-10 years |
+| Sonali Bank | 7.00% | ৳300 | ৳20,000 | 5-10 years |
+| Janata Bank | 7.00% | ৳300 | ৳20,000 | 5-10 years |
+| Agrani Bank | 7.00% | ৳300 | ৳20,000 | 5-10 years |
+| MTB (Mutual Trust) | 7.00% | ৳500 | ৳30,000 | 5-10 years |
+| Pubali Bank | 7.00% | ৳500 | ৳30,000 | 5-10 years |
+| Standard Chartered | 6.50% | ৳1,000 | ৳100,000 | 5-10 years |
+
+---
+
+## NRB Investment Decision Framework
+
+### Best Safe Returns (Risk-Free)
+1. **Wage Earner Development Bond** — 12.00% at maturity (5yr, BDT, NRB only)
+2. **USD Premium Bond** — 7.50% in USD (3yr, NRB only, hedges BDT depreciation)
+3. **Family Savings Certificate** — 10.54% monthly payout
+4. **5-Year Sanchayapatra** — 10.44% at maturity
+
+### Key Risk
+- **BDT depreciates ~7-8% annually vs USD**
+- Any BDT-denominated investment returning <8% loses real purchasing power in USD terms
+- **Hedging strategy**: Keep 15-20% in USD-denominated instruments (USD Premium Bond at 7.50%)
+
+### NRB Account Setup
+1. Open NRB savings account (BRAC Bank recommended — online application)
+2. Buy Wage Earner Bond (12%) through NRB account
+3. Buy USD Premium Bond (7.50% USD) for currency hedging
+4. Open brokerage account (BRAC EPL or equivalent) for stock exposure
+5. Consider bank FDR for short-term parking (7-8%)
+
+---
+
+## Data Update Schedule
+
+- **DSE stocks**: Updated daily when market is open (Mon-Thu 10:00 AM - 2:30 PM BST)
+- **Exchange rates**: Updated daily from Bangladesh Bank
+- **Sanchayapatra rates**: Government-set, reviewed every ~6 months (next review: Jul 2026)
+- **Bank FDR/DPS rates**: Updated monthly (last verified: May 2026)
+
+---
+
+## How to Cite This Data
+
+```
+BD Invest Tracker. (2026). Bangladesh Financial Market Data.
+Retrieved from https://arizawan.github.io/bd-invest-tracker/
+JSON data: https://arizawan.github.io/bd-invest-tracker/data/
+```
+
+## Disclaimer
+
+This is not financial advice. All data is sourced from public websites (DSE, Bangladesh Bank, IRD) and may have delays or errors. Verify all rates with your bank or broker before making investment decisions.
