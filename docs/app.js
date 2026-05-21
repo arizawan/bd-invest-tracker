@@ -117,7 +117,7 @@
         <td><strong>${name}</strong></td>
         <td>${fmt(r.bid, 4)}</td>
         <td>${fmt(r.ask, 4)}</td>
-        <td>${isSmall ? fmt(1 / mid, 2) + ' ' + ccy : ''}</td>
+        <td>${isSmall ? fmt(1 / mid, 2) + ' ' + ccy : fmt(mid, 2) + ' BDT'}</td>
       </tr>`;
     }).join('');
   }
@@ -148,8 +148,7 @@
 
     document.getElementById('bank-verified-date').textContent = bankData.lastVerified || '—';
 
-    const tenures = ['1_month', '3_months', '6_months', '12_months', '24_months', '36_months'];
-    const tenureLabels = { '1_month': '1M', '3_months': '3M', '6_months': '6M', '12_months': '12M', '24_months': '24M', '36_months': '36M' };
+    const tenures = ['3_months', '6_months', '12_months', '24_months', '36_months'];
 
     const banks = Object.entries(bankData.banks).sort((a, b) => {
       const a12 = a[1].fdr?.['12_months']?.regular || 0;

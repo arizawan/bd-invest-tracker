@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BD Invest Tracker — Free Bangladesh Investment Data | DSE, Exchange Rates, FDR, Sanchayapatra</title>
-  <meta name="description" content="Free live Bangladesh investment tracker: DSE stock prices, USD/BDT exchange rate, multi-currency rates, Sanchayapatra savings certificate rates, bank FDR & DPS rates. Updated daily for NRB expats.">
-  <meta name="keywords" content="Bangladesh investment, DSE stock prices, USD BDT exchange rate, Sanchayapatra rates, FDR rates Bangladesh, bank deposit rates, NRB investment, Bangladesh fixed deposit, DPS rates, DSEX index, Bangladesh Bank rates, expat investment Bangladesh">
+  <meta name="description" content="Free live Bangladesh investment tracker: DSE stock prices, USD/BDT exchange rate, multi-currency rates (EUR, GBP, SGD, INR), Sanchayapatra savings certificate rates, bank FDR & DPS rates for 10 banks. Updated daily for NRB expats. 100% free, no signup.">
+  <meta name="keywords" content="Bangladesh investment, DSE stock prices today, USD BDT exchange rate, Sanchayapatra rates 2026, FDR rates Bangladesh, bank deposit rates Bangladesh, NRB investment, Bangladesh fixed deposit rates, DPS rates, DSEX index, Bangladesh Bank exchange rate, BDT cross rates, wage earner bond, Bangladesh savings certificate">
   <meta name="author" content="BD Invest Tracker">
   <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:-1">
   <link rel="canonical" href="https://arizawan.github.io/bd-invest-tracker/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="BD Invest Tracker — Free Bangladesh Investment Data">
-  <meta property="og:description" content="Live DSE stocks, exchange rates (11 currencies), Sanchayapatra, bank FDR & DPS rates. 100% free, updated daily.">
+  <meta property="og:description" content="Live DSE stocks (276 companies), exchange rates (11 currencies), Sanchayapatra, bank FDR & DPS rates (10 banks). 100% free, updated daily.">
   <meta property="og:url" content="https://arizawan.github.io/bd-invest-tracker/">
   <meta property="og:site_name" content="BD Invest Tracker">
   <meta property="og:locale" content="en_BD">
@@ -21,48 +25,48 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BD Invest Tracker — Free Bangladesh Investment Data">
-  <meta name="twitter:description" content="Live DSE stocks, exchange rates, Sanchayapatra, bank FDR & DPS rates. Updated daily for NRB expats.">
+  <meta name="twitter:description" content="Live DSE stocks, 11-currency exchange rates, Sanchayapatra, bank FDR & DPS rates. Updated daily for NRB expats.">
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD: Web Application -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "BD Invest Tracker",
     "url": "https://arizawan.github.io/bd-invest-tracker/",
-    "description": "Free live Bangladesh investment data dashboard for NRB expats. Track DSE stocks, exchange rates, savings certificates, and bank deposit rates.",
+    "description": "Free live Bangladesh investment data dashboard. Track DSE stock prices, USD/BDT and 10 other currency exchange rates, Sanchayapatra savings certificate rates, bank fixed deposit (FDR) and deposit pension scheme (DPS) rates. Updated daily from DSE, Bangladesh Bank, and IRD. Built for NRB expats.",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "isAccessibleForFree": true,
-    "author": {
-      "@type": "Person",
-      "name": "NRB Developer"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Bangladesh"
-    },
+    "featureList": ["DSE stock prices (276 companies)", "USD/BDT exchange rate with 30-day history", "11-currency cross rates from Bangladesh Bank", "Sanchayapatra savings certificate rates (8 schemes)", "Bank FDR rates (10 banks, 6 tenures)", "Bank DPS rates (10 banks)", "DSE top gainers and losers", "NRB expat investment guide"],
+    "author": { "@type": "Organization", "name": "BD Invest Tracker" },
+    "areaServed": { "@type": "Country", "name": "Bangladesh" },
     "inLanguage": "en",
-    "about": [
-      {"@type": "Thing", "name": "Dhaka Stock Exchange"},
-      {"@type": "Thing", "name": "Bangladesh Bank exchange rates"},
-      {"@type": "Thing", "name": "Sanchayapatra savings certificates"},
-      {"@type": "Thing", "name": "Bangladesh bank fixed deposit rates"}
-    ]
+    "dateModified": "2026-05-21"
   }
   </script>
-  <script type="application/ld+json">
+
+  <!-- JSON-LD: Financial Data Feed (for AI/LLM parsing) -->
+  <script type="application/ld+json" id="financial-data-ld">
   {
     "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": "BD Invest Tracker",
-    "description": "Free tracker for Bangladesh DSE stocks, USD/BDT exchange rates, Sanchayapatra rates, bank FDR and DPS rates",
-    "url": "https://arizawan.github.io/bd-invest-tracker/"
+    "@type": "Dataset",
+    "name": "Bangladesh Financial Market Data",
+    "description": "Daily financial market data for Bangladesh including stock prices, exchange rates, and interest rates",
+    "url": "https://arizawan.github.io/bd-invest-tracker/",
+    "license": "https://opensource.org/licenses/MIT",
+    "creator": { "@type": "Organization", "name": "BD Invest Tracker" },
+    "temporalCoverage": "2026-04-26/2026-05-21",
+    "spatialCoverage": { "@type": "Country", "name": "Bangladesh" },
+    "keywords": ["DSE", "Bangladesh Bank", "exchange rates", "stock prices", "Sanchayapatra", "FDR", "BDT"],
+    "distribution": [
+      { "@type": "DataDownload", "name": "DSE Stock Data", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/dse.json" },
+      { "@type": "DataDownload", "name": "Exchange Rates", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json" },
+      { "@type": "DataDownload", "name": "Sanchayapatra Rates", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/savings-rates.json" },
+      { "@type": "DataDownload", "name": "Bank FDR/DPS Rates", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/bank-rates.json" }
+    ]
   }
   </script>
 
@@ -70,65 +74,87 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇧🇩</text></svg>">
 </head>
 <body>
+  <!-- Background decoration -->
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+
   <header>
     <div class="container">
       <div class="header-content">
         <div>
           <h1>🇧🇩 BD Invest Tracker</h1>
-          <p class="subtitle">Free live Bangladesh investment data for NRB expats — stocks, exchange rates, savings &amp; deposit rates</p>
+          <p class="subtitle">Free live Bangladesh investment data — stocks, exchange rates, savings &amp; deposit rates</p>
         </div>
-        <div class="header-meta" id="last-updated">
-          Loading...
-        </div>
+        <div class="header-meta" id="last-updated">Loading...</div>
       </div>
     </div>
   </header>
 
+  <!-- Machine-readable data block for AI agents -->
+  <script type="application/json" id="site-context">
+  {
+    "siteName": "BD Invest Tracker",
+    "url": "https://arizawan.github.io/bd-invest-tracker/",
+    "description": "Free Bangladesh financial data dashboard for NRB expats",
+    "dataSources": {
+      "DSE": { "url": "https://www.dsebd.org", "data": "Stock prices, DSEX/DS30/DSES indices, market summary", "stocksTracked": 276 },
+      "BangladeshBank": { "url": "https://www.bb.org.bd", "data": "USD/BDT reference rate, 11-currency cross rates, call money rate" },
+      "IRD": { "url": "https://ird.gov.bd", "data": "Sanchayapatra savings certificate rates (8 schemes)" },
+      "Banks": { "banks": 10, "data": "FDR rates (6 tenures), DPS rates, NRB special rates" }
+    },
+    "updateFrequency": "Daily (Mon-Sat at 3:30 PM BST)",
+    "cost": "Free",
+    "jsonEndpoints": {
+      "stocks": "./data/dse.json",
+      "exchangeRates": "./data/bb-rates.json",
+      "savingsCertificates": "./data/savings-rates.json",
+      "bankRates": "./data/bank-rates.json",
+      "lastUpdated": "./data/last-updated.json"
+    }
+  }
+  </script>
+
   <main class="container">
-    <!-- Market Overview Cards -->
+    <!-- Market Overview -->
     <section class="section" aria-label="Market Overview">
       <h2>📊 Market Overview</h2>
       <div class="card-grid">
-        <div class="card card-primary">
+        <div class="card card-primary card-glow">
           <div class="card-label">USD / BDT</div>
-          <div class="card-value" id="fx-rate">—</div>
+          <div class="card-value data-value" id="fx-rate">—</div>
           <div class="card-sub" id="fx-date"></div>
         </div>
-        <div class="card card-green">
+        <div class="card card-green card-glow">
           <div class="card-label">DSEX Index</div>
-          <div class="card-value" id="dsex-value">—</div>
+          <div class="card-value data-value" id="dsex-value">—</div>
           <div class="card-sub" id="dsex-change"></div>
         </div>
-        <div class="card card-blue">
+        <div class="card card-blue card-glow">
           <div class="card-label">Call Money Rate</div>
-          <div class="card-value" id="call-rate">—</div>
+          <div class="card-value data-value" id="call-rate">—</div>
           <div class="card-sub">Bangladesh Bank</div>
         </div>
-        <div class="card card-purple">
+        <div class="card card-amber card-glow">
           <div class="card-label">Best NRB Rate</div>
           <div class="card-value">12.00%</div>
-          <div class="card-sub">Wage Earner Bond</div>
+          <div class="card-sub"><span class="badge badge-green">Wage Earner Bond</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Multi-Currency Exchange Rates -->
-    <section class="section" aria-label="Exchange Rates">
-      <h2>💱 BDT Exchange Rates — All Currencies</h2>
+    <!-- Cross Rates -->
+    <section class="section" aria-label="BDT Exchange Rates for All Currencies">
+      <h2>💱 BDT Exchange Rates</h2>
       <p class="section-note">Bangladesh Bank interbank rates · <span id="cross-rate-date">—</span></p>
       <div class="card">
         <div class="table-responsive">
-          <table id="cross-rates-table">
+          <table id="cross-rates-table" role="table" aria-label="BDT cross currency exchange rates from Bangladesh Bank">
             <thead>
-              <tr>
-                <th>Currency</th>
-                <th>Buy (BDT)</th>
-                <th>Sell (BDT)</th>
-                <th>1 Unit =</th>
-              </tr>
+              <tr><th>Currency</th><th>Buy (BDT)</th><th>Sell (BDT)</th><th>1 BDT =</th></tr>
             </thead>
             <tbody id="cross-rates-body">
-              <tr><td colspan="4" class="loading">Loading...</td></tr>
+              <tr><td colspan="4" class="loading">Loading exchange rates...</td></tr>
             </tbody>
           </table>
         </div>
@@ -136,17 +162,13 @@
     </section>
 
     <!-- USD/BDT History -->
-    <section class="section" aria-label="USD BDT Exchange Rate History">
-      <h2>📈 USD/BDT Exchange Rate History</h2>
+    <section class="section" aria-label="USD to BDT Exchange Rate History">
+      <h2>📈 USD/BDT Rate History</h2>
       <div class="card">
         <div class="table-responsive">
-          <table id="fx-history">
+          <table id="fx-history" role="table" aria-label="USD BDT reference exchange rate history">
             <thead>
-              <tr>
-                <th>Date</th>
-                <th>AM Rate</th>
-                <th>PM Rate</th>
-              </tr>
+              <tr><th>Date</th><th>AM Rate</th><th>PM Rate</th></tr>
             </thead>
             <tbody id="fx-history-body">
               <tr><td colspan="3" class="loading">Loading...</td></tr>
@@ -156,48 +178,33 @@
       </div>
     </section>
 
-    <!-- Bank FDR Rates -->
-    <section class="section" aria-label="Bank Fixed Deposit Rates">
+    <!-- Bank FDR -->
+    <section class="section" aria-label="Bangladesh Bank Fixed Deposit FDR Interest Rates">
       <h2>🏦 Bank Fixed Deposit (FDR) Rates</h2>
-      <p class="section-note">Last verified: <span id="bank-verified-date">—</span> · Rates are indicative — confirm with bank before investing</p>
+      <p class="section-note">Last verified: <span id="bank-verified-date">—</span> · <span class="badge badge-amber">Indicative — confirm with bank</span></p>
       <div class="card">
         <div class="table-responsive">
-          <table id="fdr-table">
+          <table id="fdr-table" role="table" aria-label="Fixed deposit rates by bank and tenure">
             <thead>
-              <tr>
-                <th>Bank</th>
-                <th>Type</th>
-                <th>3 Month</th>
-                <th>6 Month</th>
-                <th>12 Month</th>
-                <th>24 Month</th>
-                <th>36 Month</th>
-                <th>NRB Special</th>
-              </tr>
+              <tr><th>Bank</th><th>Type</th><th>3M</th><th>6M</th><th>12M</th><th>24M</th><th>36M</th><th>NRB</th></tr>
             </thead>
             <tbody id="fdr-body">
-              <tr><td colspan="8" class="loading">Loading...</td></tr>
+              <tr><td colspan="8" class="loading">Loading bank rates...</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- Bank DPS Rates -->
-    <section class="section" aria-label="Bank Deposit Pension Scheme Rates">
-      <h2>💳 Bank DPS (Deposit Pension Scheme) Rates</h2>
-      <p class="section-note">Monthly savings scheme — save fixed amount monthly, get lump sum at maturity</p>
+    <!-- DPS -->
+    <section class="section" aria-label="Bank Deposit Pension Scheme DPS Rates in Bangladesh">
+      <h2>💳 DPS (Deposit Pension Scheme) Rates</h2>
+      <p class="section-note">Monthly savings → lump sum at maturity</p>
       <div class="card">
         <div class="table-responsive">
-          <table id="dps-table">
+          <table id="dps-table" role="table" aria-label="DPS monthly savings scheme rates">
             <thead>
-              <tr>
-                <th>Bank</th>
-                <th>Annual Return</th>
-                <th>Min/ Month</th>
-                <th>Max/ Month</th>
-                <th>Tenure</th>
-              </tr>
+              <tr><th>Bank</th><th>Annual Return</th><th>Min/Month</th><th>Max/Month</th><th>Tenure</th></tr>
             </thead>
             <tbody id="dps-body">
               <tr><td colspan="5" class="loading">Loading...</td></tr>
@@ -207,21 +214,15 @@
       </div>
     </section>
 
-    <!-- Sanchayapatra Rates -->
-    <section class="section" aria-label="Sanchayapatra Savings Certificate Rates">
+    <!-- Sanchayapatra -->
+    <section class="section" aria-label="Bangladesh Sanchayapatra Savings Certificate Rates 2026">
       <h2>🏛️ Sanchayapatra (Savings Certificate) Rates</h2>
       <p class="section-note">Effective: <span id="savings-date">—</span> · Next review: <span id="savings-review">—</span></p>
       <div class="card">
         <div class="table-responsive">
-          <table id="savings-table">
+          <table id="savings-table" role="table" aria-label="Government savings certificate schemes with yields">
             <thead>
-              <tr>
-                <th>Scheme</th>
-                <th>Tenure</th>
-                <th>Payout</th>
-                <th>Best Yield</th>
-                <th>Eligibility</th>
-              </tr>
+              <tr><th>Scheme</th><th>Tenure</th><th>Payout</th><th>Best Yield</th><th>Eligibility</th></tr>
             </thead>
             <tbody id="savings-body">
               <tr><td colspan="5" class="loading">Loading...</td></tr>
@@ -236,87 +237,58 @@
     </section>
 
     <!-- DSE Stocks -->
-    <section class="section" aria-label="DSE Stock Prices">
+    <section class="section" aria-label="Dhaka Stock Exchange DSE Top Stock Prices Today">
       <h2>📈 DSE Top Stocks by Price</h2>
       <div class="card">
         <div class="table-responsive">
-          <table id="stocks-table">
+          <table id="stocks-table" role="table" aria-label="Top 30 DSE stocks sorted by price">
             <thead>
-              <tr>
-                <th>#</th>
-                <th>CODE</th>
-                <th>LTP (৳)</th>
-                <th>DIR</th>
-                <th>CHANGE</th>
-                <th>CHANGE %</th>
-              </tr>
+              <tr><th>#</th><th>Code</th><th>LTP (৳)</th><th>Dir</th><th>Change</th><th>Chg %</th></tr>
             </thead>
             <tbody id="stocks-body">
-              <tr><td colspan="6" class="loading">Loading...</td></tr>
+              <tr><td colspan="6" class="loading">Loading stocks...</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- Top Gainers & Losers -->
-    <section class="section" aria-label="DSE Top Gainers and Losers">
+    <!-- Gainers / Losers -->
+    <section class="section" aria-label="DSE Top Gainers and Losers Today">
       <h2>🏆 Top Gainers &amp; Losers</h2>
       <div class="card-grid">
         <div class="card card-green-light">
           <h3>🟢 Top Gainers</h3>
-          <table class="inner-table">
+          <table class="inner-table" role="table" aria-label="Top gaining stocks">
             <thead><tr><th>Code</th><th>Price</th><th>Change</th></tr></thead>
-            <tbody id="gainers-body">
-              <tr><td colspan="3" class="loading">Loading...</td></tr>
-            </tbody>
+            <tbody id="gainers-body"><tr><td colspan="3" class="loading">—</td></tr></tbody>
           </table>
         </div>
         <div class="card card-red-light">
           <h3>🔴 Top Losers</h3>
-          <table class="inner-table">
+          <table class="inner-table" role="table" aria-label="Top losing stocks">
             <thead><tr><th>Code</th><th>Price</th><th>Change</th></tr></thead>
-            <tbody id="losers-body">
-              <tr><td colspan="3" class="loading">Loading...</td></tr>
-            </tbody>
+            <tbody id="losers-body"><tr><td colspan="3" class="loading">—</td></tr></tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- Market Statistics -->
-    <section class="section" aria-label="DSE Market Statistics">
+    <!-- Market Stats -->
+    <section class="section" aria-label="DSE Market Statistics Today">
       <h2>📋 Market Statistics</h2>
       <div class="card-grid card-grid-3">
-        <div class="card">
-          <div class="card-label">Total Trades</div>
-          <div class="card-value" id="total-trades">—</div>
-        </div>
-        <div class="card">
-          <div class="card-label">Total Volume</div>
-          <div class="card-value" id="total-volume">—</div>
-        </div>
-        <div class="card">
-          <div class="card-label">Total Value (৳ Mn)</div>
-          <div class="card-value" id="total-value">—</div>
-        </div>
-        <div class="card card-green">
-          <div class="card-label">Advanced</div>
-          <div class="card-value" id="advanced">—</div>
-        </div>
-        <div class="card card-red">
-          <div class="card-label">Declined</div>
-          <div class="card-value" id="declined">—</div>
-        </div>
-        <div class="card card-gray">
-          <div class="card-label">Unchanged</div>
-          <div class="card-value" id="unchanged">—</div>
-        </div>
+        <div class="card"><div class="card-label">Total Trades</div><div class="card-value" id="total-trades">—</div></div>
+        <div class="card"><div class="card-label">Total Volume</div><div class="card-value" id="total-volume">—</div></div>
+        <div class="card"><div class="card-label">Total Value (৳ Mn)</div><div class="card-value" id="total-value">—</div></div>
+        <div class="card card-green"><div class="card-label">Advanced</div><div class="card-value" id="advanced">—</div></div>
+        <div class="card card-red"><div class="card-label">Declined</div><div class="card-value" id="declined">—</div></div>
+        <div class="card card-gray"><div class="card-label">Unchanged</div><div class="card-value" id="unchanged">—</div></div>
       </div>
     </section>
 
     <!-- NRB Guide -->
-    <section class="section" aria-label="NRB Expat Investment Guide">
+    <section class="section" aria-label="NRB Expat Investment Guide for Bangladesh">
       <h2>🎒 NRB Expat Quick Guide</h2>
       <div class="card-grid">
         <div class="card card-highlight">
@@ -331,12 +303,12 @@
         <div class="card card-highlight">
           <h3>⚠️ Key Risk</h3>
           <p><strong>BDT depreciates ~7-8% annually vs USD.</strong></p>
-          <p>Any investment returning &lt;8% in BDT loses real value in USD/THB terms.</p>
-          <p><strong>Hedge:</strong> Keep 15-20% in USD-denominated instruments (USD Premium Bond).</p>
+          <p style="margin-top:6px">Any BDT investment returning &lt;8% loses real value in USD terms.</p>
+          <p style="margin-top:8px"><span class="badge badge-green">Hedge:</span> Keep 15-20% in USD-denominated instruments.</p>
         </div>
         <div class="card card-highlight">
           <h3>🚀 Getting Started</h3>
-          <ol>
+          <ol style="padding-left:20px;font-size:0.85rem;line-height:1.8">
             <li>Open BRAC Bank NRB account (online)</li>
             <li>Buy Wage Earner Bond (12%)</li>
             <li>Buy USD Premium Bond (7% USD)</li>
