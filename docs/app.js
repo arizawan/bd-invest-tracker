@@ -96,6 +96,7 @@
       CNH: '🇨🇳 Chinese Yuan', INR: '🇮🇳 Indian Rupee', LKR: '🇱🇰 Sri Lankan Rupee',
       THB: '🇹🇭 Thai Baht', MYR: '🇲🇾 Malaysian Ringgit', SAR: '🇸🇦 Saudi Riyal',
       AED: '🇦🇪 UAE Dirham', BHD: '🇧🇭 Bahraini Dinar', KWD: '🇰🇼 Kuwaiti Dinar',
+      QAR: '🇶🇦 Qatari Riyal', OMR: '🇴🇲 Omani Rial',
     };
 
     // USD first, then alphabetical

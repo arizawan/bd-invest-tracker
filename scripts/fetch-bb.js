@@ -2,8 +2,23 @@
  * Fetch Bangladesh Bank data
  * - USD/BDT reference rate (AM/PM)
  * - Cross rates (EUR, GBP, SGD, INR, JPY, AUD, CAD, etc.)
+ * - Derived NRB-relevant rates (SAR, AED, QAR, OMR, BHD, KWD, THB, MYR)
  * - Call money rate, MMRR
  */
+
+// Gulf currencies pegged to USD (rate = units per 1 USD)
+const PEGGED_CURRENCIES = {
+  SAR: 3.75,      // Saudi Riyal (fixed since 1986)
+  AED: 3.6725,    // UAE Dirham (fixed since 1997)
+  QAR: 3.64,      // Qatari Riyal (fixed since 2001)
+  OMR: 0.3845,    // Omani Rial (fixed since 1986)
+  BHD: 0.376,     // Bahraini Dinar (fixed since 1980)
+  KWD: 0.2997,    // Kuwaiti Dinar (managed peg ~0.30)
+};
+
+// Free API for floating SE Asian currencies (no key needed)
+const FX_API_URL = 'https://open.er-api.com/v6/latest/USD';
+const FLOATING_CCYS = ['THB', 'MYR'];
 const https = require('https');
 const http = require('http');
 const fs = require('fs');
@@ -110,7 +125,36 @@ async function main() {
       console.warn('  Could not fetch cross rates:', e.message);
     }
 
-    // 3. Main page for call money rate and MMRR
+    // 3. Derived NRB-relevant rates (pegged Gulf currencies + THB/MYR)
+    const usdBdt = referenceRates.length > 0
+      ? (referenceRates[0].am || referenceRates[0].pm || 122.75)
+      : (crossRates.USD?.bid || 122.75);
+
+    // Pegged: BDT/CCY = USD_BDT / PEG_RATE
+    for (const [ccy, pegRate] of Object.entries(PEGGED_CURRENCIES)) {
+      const bdtPerCcy = usdBdt / pegRate;
+      crossRates[ccy] = { bid: Math.round(bdtPerCcy * 100) / 100, ask: Math.round(bdtPerCcy * 100) / 100 };
+    }
+    console.log(`  Pegged rates added: ${Object.keys(PEGGED_CURRENCIES).join(', ')}`);
+
+    // Floating: THB, MYR via free API
+    try {
+      const fxApiBody = await fetch(FX_API_URL);
+      const fxData = JSON.parse(fxApiBody);
+      if (fxData.rates) {
+        for (const ccy of FLOATING_CCYS) {
+          if (fxData.rates[ccy]) {
+            const bdtPerCcy = usdBdt / fxData.rates[ccy];
+            crossRates[ccy] = { bid: Math.round(bdtPerCcy * 100) / 100, ask: Math.round(bdtPerCcy * 100) / 100 };
+          }
+        }
+        console.log(`  Floating rates added: ${FLOATING_CCYS.filter(c => fxData.rates[c]).join(', ')}`);
+      }
+    } catch (e) {
+      console.warn('  Could not fetch THB/MYR rates:', e.message);
+    }
+
+    // 4. Main page for call money rate and MMRR
     let callMoneyRate = null;
     let mmrr = null;
     try {
@@ -142,7 +186,7 @@ async function main() {
     };
 
     fs.writeFileSync(path.join(DATA_DIR, 'bb-rates.json'), JSON.stringify(bbData, null, 2));
-    console.log(`BB data saved: USD/BDT=${JSON.stringify(bbData.exchangeRate.USD_BDT)}, cross=${Object.keys(crossRates).length} currencies, call=${callMoneyRate}`);
+    console.log(`BB data saved: USD/BDT=${JSON.stringify(bbData.exchangeRate.USD_BDT)}, cross=${Object.keys(crossRates).length} currencies (incl. ${Object.keys(PEGGED_CURRENCIES).length} pegged + ${FLOATING_CCYS.length} floating), call=${callMoneyRate}`);
   } catch (err) {
     console.error('Error fetching BB data:', err.message);
     process.exit(1);

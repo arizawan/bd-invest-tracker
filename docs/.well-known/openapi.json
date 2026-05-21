@@ -66,7 +66,7 @@
     "/data/bb-rates.json": {
       "get": {
         "summary": "Exchange Rates & Money Market",
-        "description": "Bangladesh Bank data: USD/BDT reference rate (AM+PM), 30-day rate history, 11-currency cross rates (EUR, GBP, AUD, JPY, CAD, SEK, SGD, CNH, INR, LKR, USD), call money rate. Updated daily.",
+        "description": "Bangladesh Bank data: USD/BDT reference rate (AM+PM), 30-day rate history, 19-currency cross rates — 11 BB-published (EUR, GBP, AUD, JPY, CAD, SEK, SGD, CNH, INR, LKR, USD) + 6 pegged Gulf currencies (SAR, AED, QAR, OMR, BHD, KWD) + 2 floating SE Asian (THB, MYR) — and call money rate. Updated daily.",
         "operationId": "getExchangeRates",
         "responses": {
           "200": {

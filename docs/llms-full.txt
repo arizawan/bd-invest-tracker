@@ -22,7 +22,7 @@ All endpoints are static JSON files served via GitHub Pages. No CORS issues. No 
 | Endpoint | URL | Description |
 |----------|-----|-------------|
 | DSE Stocks | https://arizawan.github.io/bd-invest-tracker/data/dse.json | 276 DSE stocks, indices, market summary |
-| Exchange Rates | https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json | USD/BDT + 11 currencies, call money rate |
+| Exchange Rates | https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json | USD/BDT + 19 currencies (incl. NRB: SAR, AED, THB, MYR), call money rate |
 | Savings Rates | https://arizawan.github.io/bd-invest-tracker/data/savings-rates.json | 8 Sanchayapatra schemes with tiered rates |
 | Bank Rates | https://arizawan.github.io/bd-invest-tracker/data/bank-rates.json | FDR/DPS rates for 10 banks |
 | Last Updated | https://arizawan.github.io/bd-invest-tracker/data/last-updated.json | Data freshness timestamp |
@@ -46,6 +46,19 @@ All endpoints are static JSON files served via GitHub Pages. No CORS issues. No 
 | JPY 🇯🇵 | 0.77 | 0.77 | 0.77 |
 | INR 🇮🇳 | 1.27 | 1.27 | 1.27 |
 | LKR 🇱🇰 | 2.75 | 2.79 | 2.77 |
+
+**NRB-Relevant Derived Rates** (computed from USD/BDT for expat currencies):
+
+| Currency | Buy (BDT) | Sell (BDT) | Mid Rate | Note |
+|----------|-----------|------------|----------|------|
+| SAR 🇸🇦 | 32.75 | 32.75 | 32.75 | Pegged 3.75/USD |
+| AED 🇦🇪 | 33.44 | 33.44 | 33.44 | Pegged 3.6725/USD |
+| QAR 🇶🇦 | 33.74 | 33.74 | 33.74 | Pegged 3.64/USD |
+| THB 🇹🇭 | 3.76 | 3.76 | 3.76 | Floating (from FX API) |
+| MYR 🇲🇾 | 30.93 | 30.93 | 30.93 | Floating (from FX API) |
+| OMR 🇴🇲 | 319.42 | 319.42 | 319.42 | Pegged 0.3845/USD |
+| BHD 🇧🇭 | 326.64 | 326.64 | 326.64 | Pegged 0.376/USD |
+| KWD 🇰🇼 | 409.80 | 409.80 | 409.80 | Managed peg ~0.30/USD |
 
 **Call Money Rate**: 5.00%
 

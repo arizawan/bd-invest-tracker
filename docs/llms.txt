@@ -30,7 +30,7 @@ All endpoints return valid JSON. No authentication required.
 
 ### 2. Exchange Rates
 - **URL**: `https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json`
-- **Contents**: USD/BDT reference rate (AM+PM), 30-day rate history, 11-currency cross rates (EUR, GBP, AUD, JPY, CAD, SEK, SGD, CNH, INR, LKR + USD), call money rate
+- **Contents**: USD/BDT reference rate (AM+PM), 30-day rate history, 19-currency cross rates: 11 BB-published (EUR, GBP, AUD, JPY, CAD, SEK, SGD, CNH, INR, LKR + USD) + 6 pegged Gulf currencies (SAR, AED, QAR, OMR, BHD, KWD) + 2 floating SE Asian (THB, MYR), call money rate
 - **Schema**:
   ```json
   {

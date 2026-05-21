@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BD Invest Tracker — Free Bangladesh Investment Data | DSE, Exchange Rates, FDR, Sanchayapatra</title>
-  <meta name="description" content="Free live Bangladesh investment tracker: DSE stock prices, USD/BDT exchange rate, multi-currency rates (EUR, GBP, SGD, INR), Sanchayapatra savings certificate rates, bank FDR & DPS rates for 10 banks. Updated daily for NRB expats. 100% free, no signup.">
-  <meta name="keywords" content="Bangladesh investment, DSE stock prices today, USD BDT exchange rate, Sanchayapatra rates 2026, FDR rates Bangladesh, bank deposit rates Bangladesh, NRB investment, Bangladesh fixed deposit rates, DPS rates, DSEX index, Bangladesh Bank exchange rate, BDT cross rates, wage earner bond, Bangladesh savings certificate, Bangladesh interest rates, DSE top gainers, DSE top losers, NRB expat investment, Bangladesh stock market, BDT to USD, taka exchange rate">
+  <meta name="description" content="Free live Bangladesh investment tracker: DSE stock prices, USD/BDT exchange rate, 19-currency rates (EUR, GBP, SGD, INR, THB, MYR, SAR, AED), Sanchayapatra savings certificate rates, bank FDR & DPS rates for 10 banks. Updated daily for NRB expats. 100% free, no signup.">
+  <meta name="keywords" content="Bangladesh investment, DSE stock prices today, USD BDT exchange rate, Sanchayapatra rates 2026, FDR rates Bangladesh, bank deposit rates Bangladesh, NRB investment, Bangladesh fixed deposit rates, DPS rates, DSEX index, Bangladesh Bank exchange rate, BDT cross rates, wage earner bond, Bangladesh savings certificate, Bangladesh interest rates, DSE top gainers, DSE top losers, NRB expat investment, Bangladesh stock market, BDT to USD, taka exchange rate, THB BDT, MYR BDT, SAR BDT, AED BDT, Saudi riyal to taka, UAE dirham to taka, Thai baht to taka, Malaysian ringgit to taka, Gulf currency rates Bangladesh">
   <meta name="author" content="BD Invest Tracker">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:-1">
@@ -33,7 +33,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="BD Invest Tracker — Free Bangladesh Investment Data">
-  <meta property="og:description" content="Live DSE stocks (276 companies), exchange rates (11 currencies), Sanchayapatra, bank FDR & DPS rates (10 banks). 100% free, updated daily.">
+  <meta property="og:description" content="Live DSE stocks (276 companies), exchange rates (19 currencies incl. SAR, AED, THB, MYR), Sanchayapatra, bank FDR & DPS rates (10 banks). 100% free, updated daily.">
   <meta property="og:url" content="https://arizawan.github.io/bd-invest-tracker/">
   <meta property="og:site_name" content="BD Invest Tracker">
   <meta property="og:locale" content="en_BD">
@@ -42,7 +42,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BD Invest Tracker — Free Bangladesh Investment Data">
-  <meta name="twitter:description" content="Live DSE stocks, 11-currency exchange rates, Sanchayapatra, bank FDR & DPS rates. Updated daily for NRB expats.">
+  <meta name="twitter:description" content="Live DSE stocks, 19-currency exchange rates (incl. SAR, AED, THB, MYR), Sanchayapatra, bank FDR & DPS rates. Updated daily for NRB expats.">
 
   <!-- JSON-LD: Web Application -->
   <script type="application/ld+json">
@@ -51,7 +51,7 @@
     "@type": "WebApplication",
     "name": "BD Invest Tracker",
     "url": "https://arizawan.github.io/bd-invest-tracker/",
-    "description": "Free live Bangladesh investment data dashboard. Track DSE stock prices, USD/BDT and 10 other currency exchange rates, Sanchayapatra savings certificate rates, bank fixed deposit (FDR) and deposit pension scheme (DPS) rates. Updated daily from DSE, Bangladesh Bank, and IRD. Built for NRB expats.",
+    "description": "Free live Bangladesh investment data dashboard. Track DSE stock prices, USD/BDT and 18 other currency exchange rates (incl. SAR, AED, THB, MYR for NRB expats), Sanchayapatra savings certificate rates, bank fixed deposit (FDR) and deposit pension scheme (DPS) rates. Updated daily from DSE, Bangladesh Bank, and IRD.",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "browserRequirements": "Requires JavaScript",
@@ -61,6 +61,7 @@
       "DSE stock prices (276 companies)",
       "USD/BDT exchange rate with 30-day history",
       "11-currency cross rates from Bangladesh Bank",
+      "Derived NRB rates: SAR, AED, QAR, OMR, BHD, KWD (pegged), THB, MYR (floating)",
       "Sanchayapatra savings certificate rates (8 schemes)",
       "Bank FDR rates (10 banks, 6 tenures)",
       "Bank DPS rates (10 banks)",
@@ -103,7 +104,7 @@
     "keywords": ["DSE", "Bangladesh Bank", "exchange rates", "stock prices", "Sanchayapatra", "FDR", "BDT", "DSEX", "NRB investment", "savings certificate"],
     "distribution": [
       { "@type": "DataDownload", "name": "DSE Stock Data (276 companies)", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/dse.json" },
-      { "@type": "DataDownload", "name": "Bangladesh Bank Exchange Rates (11 currencies)", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json" },
+      { "@type": "DataDownload", "name": "Bangladesh Bank Exchange Rates (19 currencies incl. NRB)", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/bb-rates.json" },
       { "@type": "DataDownload", "name": "Sanchayapatra Rates (8 schemes)", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/savings-rates.json" },
       { "@type": "DataDownload", "name": "Bank FDR/DPS Rates (10 banks)", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/bank-rates.json" },
       { "@type": "DataDownload", "name": "Last Updated Timestamp", "encodingFormat": "application/json", "contentUrl": "https://arizawan.github.io/bd-invest-tracker/data/last-updated.json" }
@@ -167,10 +168,10 @@
       },
       {
         "@type": "Question",
-        "name": "What is the BDT exchange rate for EUR, GBP, SGD, INR?",
+        "name": "What is the BDT exchange rate for EUR, GBP, SAR, AED, THB, MYR?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bangladesh Bank cross rates (May 2026): EUR 142.73, GBP 164.91, SGD 96.03, INR 1.27, AUD 87.78, CAD 89.29, JPY 0.77, SEK 13.15, CNH 18.05, LKR 2.77."
+          "text": "Bangladesh Bank cross rates (May 2026): EUR 142.73, GBP 164.91, SGD 96.03, INR 1.27, AUD 87.78, CAD 89.29, JPY 0.77, SEK 13.15, CNH 18.05, LKR 2.77. NRB-relevant derived rates: SAR 32.75, AED 33.44, THB 3.76, MYR 30.93, QAR 33.74, BHD 326.64, KWD 409.80, OMR 319.42."
         }
       },
       {
@@ -260,7 +261,7 @@
     "description": "Free Bangladesh financial data dashboard for NRB expats",
     "dataSources": {
       "DSE": { "url": "https://www.dsebd.org", "data": "Stock prices, DSEX/DS30/DSES indices, market summary", "stocksTracked": 276 },
-      "BangladeshBank": { "url": "https://www.bb.org.bd", "data": "USD/BDT reference rate, 11-currency cross rates, call money rate" },
+      "BangladeshBank": { "url": "https://www.bb.org.bd", "data": "USD/BDT reference rate, 11-currency cross rates + 8 derived NRB rates (19 total)" },
       "IRD": { "url": "https://ird.gov.bd", "data": "Sanchayapatra savings certificate rates (8 schemes)" },
       "Banks": { "banks": 10, "data": "FDR rates (6 tenures), DPS rates, NRB special rates" }
     },
