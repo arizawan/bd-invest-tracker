@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BD Invest Tracker — Bangladesh Investment Data for NRB Expats</title>
+  <meta name="description" content="Live Bangladesh investment data: stock prices, exchange rates, savings certificate rates. Free, updated daily.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇧🇩</text></svg>">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div>
+          <h1>🇧🇩 BD Invest Tracker</h1>
+          <p class="subtitle">Live Bangladesh investment data for NRB expats — completely free</p>
+        </div>
+        <div class="header-meta" id="last-updated">
+          Loading...
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Market Overview Cards -->
+    <section class="section">
+      <h2>📊 Market Overview</h2>
+      <div class="card-grid">
+        <div class="card card-primary">
+          <div class="card-label">USD / BDT</div>
+          <div class="card-value" id="fx-rate">—</div>
+          <div class="card-sub" id="fx-date"></div>
+        </div>
+        <div class="card card-green">
+          <div class="card-label">DSEX Index</div>
+          <div class="card-value" id="dsex-value">—</div>
+          <div class="card-sub" id="dsex-change"></div>
+        </div>
+        <div class="card card-blue">
+          <div class="card-label">Call Money Rate</div>
+          <div class="card-value" id="call-rate">—</div>
+          <div class="card-sub">Bangladesh Bank</div>
+        </div>
+        <div class="card card-purple">
+          <div class="card-label">Best NRB Rate</div>
+          <div class="card-value">12.00%</div>
+          <div class="card-sub">Wage Earner Bond</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exchange Rate History -->
+    <section class="section">
+      <h2>💱 USD/BDT Exchange Rate History</h2>
+      <div class="card">
+        <div class="table-responsive">
+          <table id="fx-history">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>AM Rate</th>
+                <th>PM Rate</th>
+              </tr>
+            </thead>
+            <tbody id="fx-history-body">
+              <tr><td colspan="3" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Savings Certificates -->
+    <section class="section">
+      <h2>🏛️ Sanchayapatra Rates</h2>
+      <p class="section-note">Effective: <span id="savings-date">—</span> · Next review: <span id="savings-review">—</span></p>
+      <div class="card">
+        <div class="table-responsive">
+          <table id="savings-table">
+            <thead>
+              <tr>
+                <th>Scheme</th>
+                <th>Tenure</th>
+                <th>Payout</th>
+                <th>Best Yield</th>
+                <th>Eligibility</th>
+              </tr>
+            </thead>
+            <tbody id="savings-body">
+              <tr><td colspan="5" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <details class="details-block">
+        <summary>📋 View detailed rates by tier and year</summary>
+        <div id="savings-detail"></div>
+      </details>
+    </section>
+
+    <!-- DSE Top Stocks -->
+    <section class="section">
+      <h2>📈 DSE Top Stocks by Price</h2>
+      <div class="card">
+        <div class="table-responsive">
+          <table id="stocks-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>LTP (৳)</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Change</th>
+              </tr>
+            </thead>
+            <tbody id="stocks-body">
+              <tr><td colspan="6" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- DSE Market Summary -->
+    <section class="section">
+      <h2>📋 Market Statistics</h2>
+      <div class="card-grid card-grid-3">
+        <div class="card">
+          <div class="card-label">Total Trades</div>
+          <div class="card-value" id="total-trades">—</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Total Volume</div>
+          <div class="card-value" id="total-volume">—</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Total Value (৳ Mn)</div>
+          <div class="card-value" id="total-value">—</div>
+        </div>
+        <div class="card card-green">
+          <div class="card-label">Advanced</div>
+          <div class="card-value" id="advanced">—</div>
+        </div>
+        <div class="card card-red">
+          <div class="card-label">Declined</div>
+          <div class="card-value" id="declined">—</div>
+        </div>
+        <div class="card card-gray">
+          <div class="card-label">Unchanged</div>
+          <div class="card-value" id="unchanged">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NRB Guide -->
+    <section class="section">
+      <h2>🎒 NRB Expat Quick Guide</h2>
+      <div class="card-grid">
+        <div class="card card-highlight">
+          <h3>🏆 Best Safe Returns</h3>
+          <table class="inner-table">
+            <tr><td>Wage Earner Bond</td><td class="rate-high">12.00%</td></tr>
+            <tr><td>USD Premium Bond</td><td class="rate-good">7.50% (USD)</td></tr>
+            <tr><td>Family Savings Cert</td><td class="rate-good">10.54%</td></tr>
+            <tr><td>5-Year Sanchayapatra</td><td class="rate-good">10.44%</td></tr>
+          </table>
+        </div>
+        <div class="card card-highlight">
+          <h3>⚠️ Key Risk</h3>
+          <p><strong>BDT depreciates ~7-8% annually vs USD.</strong></p>
+          <p>Any investment returning &lt;8% in BDT loses real value in USD/THB terms.</p>
+          <p><strong>Hedge:</strong> Keep 15-20% in USD-denominated instruments (USD Premium Bond).</p>
+        </div>
+        <div class="card card-highlight">
+          <h3>🚀 Getting Started</h3>
+          <ol>
+            <li>Open BRAC Bank NRB account (online)</li>
+            <li>Buy Wage Earner Bond (12%)</li>
+            <li>Buy USD Premium Bond (7% USD)</li>
+            <li>Open BRAC EPL brokerage</li>
+            <li>Invest in blue-chip stocks</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Data sources: <a href="https://www.dsebd.org" target="_blank" rel="noopener">DSE</a> · <a href="https://www.bb.org.bd" target="_blank" rel="noopener">Bangladesh Bank</a> · <a href="https://ird.gov.bd" target="_blank" rel="noopener">IRD</a></p>
+      <p>⚠️ Not financial advice. Verify all data before investing. Built by an NRB for NRbs.</p>
+      <p>100% free · Open source · <a href="https://github.com" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+/* BD Invest Tracker — Clean, mobile-first styles */
+:root {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --text: #1a1a2e;
+  --text-muted: #6b7280;
+  --primary: #006a4e;      /* Bangladesh green */
+  --primary-light: #e6f5ef;
+  --red: #c62828;
+  --red-light: #fde8e8;
+  --green: #2e7d32;
+  --green-light: #e8f5e9;
+  --blue: #1565c0;
+  --blue-light: #e3f2fd;
+  --purple: #6a1b9a;
+  --purple-light: #f3e5f5;
+  --border: #e5e7eb;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --radius: 8px;
+  --max-width: 1200px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 16px; }
+
+/* Header */
+header {
+  background: var(--primary);
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 24px;
+}
+.header-content {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+header h1 { font-size: 1.5rem; font-weight: 700; }
+header .subtitle { opacity: 0.85; font-size: 0.9rem; margin-top: 2px; }
+.header-meta { font-size: 0.8rem; opacity: 0.75; text-align: right; }
+
+/* Sections */
+.section { margin-bottom: 32px; }
+.section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--text); }
+.section-note { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; }
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.card-primary { border-left: 4px solid var(--primary); }
+.card-green   { border-left: 4px solid var(--green); }
+.card-blue    { border-left: 4px solid var(--blue); }
+.card-purple  { border-left: 4px solid var(--purple); }
+.card-red     { border-left: 4px solid var(--red); }
+.card-gray    { border-left: 4px solid #9e9e9e; }
+.card-highlight {
+  border-left: 4px solid var(--primary);
+  background: var(--primary-light);
+}
+.card-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.card-value { font-size: 1.6rem; font-weight: 700; color: var(--text); margin: 4px 0; }
+.card-sub   { font-size: 0.8rem; color: var(--text-muted); }
+.card h3    { font-size: 1rem; margin-bottom: 8px; }
+
+/* Tables */
+.table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.85rem;
+}
+th, td {
+  padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border);
+}
+th {
+  background: var(--bg); font-weight: 600; font-size: 0.75rem;
+  text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted);
+  position: sticky; top: 0;
+}
+tr:hover { background: var(--bg); }
+.loading { text-align: center; color: var(--text-muted); padding: 20px; }
+.inner-table { width: 100%; }
+.inner-table td { padding: 6px 8px; font-size: 0.85rem; }
+.inner-table td:last-child { text-align: right; font-weight: 600; }
+
+/* Rate colors */
+.rate-high { color: var(--green); font-weight: 700; }
+.rate-good { color: var(--blue); font-weight: 600; }
+.change-pos { color: var(--green); }
+.change-neg { color: var(--red); }
+.highlight-row { background: var(--green-light); }
+
+/* Details block */
+.details-block {
+  margin-top: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+.details-block summary {
+  cursor: pointer; font-weight: 600; color: var(--primary);
+  padding: 4px 0;
+}
+.details-block[open] summary { margin-bottom: 12px; }
+
+/* Savings detail */
+.scheme-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  background: var(--bg);
+}
+.scheme-card h4 { font-size: 0.95rem; margin-bottom: 8px; }
+.scheme-card.nrb { border-left: 4px solid var(--primary); background: var(--primary-light); }
+.tier-table { width: 100%; font-size: 0.8rem; }
+.tier-table td { padding: 4px 8px; }
+
+/* Footer */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+footer a { color: var(--primary); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer p { margin-bottom: 4px; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .header-content { flex-direction: column; text-align: center; }
+  .header-meta { text-align: center; }
+  header h1 { font-size: 1.2rem; }
+  .card-value { font-size: 1.3rem; }
+  .card-grid { grid-template-columns: 1fr 1fr; }
+  th, td { padding: 8px 6px; font-size: 0.75rem; }
+}

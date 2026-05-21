@@ -1,0 +1,211 @@
+[
+  {
+    "effectiveDate": "2026-01-01",
+    "schemes": {
+      "5-year-bangladesh-sanchayapatra": {
+        "name": "5-Year Bangladesh Sanchayapatra",
+        "tenure": "5 years",
+        "payout": "On maturity",
+        "tiers": [
+          {
+            "label": "Up to ৳7.5 Lakh",
+            "yearlyRates": {
+              "1": 8.76,
+              "2": 9.15,
+              "3": 9.55,
+              "4": 9.98,
+              "5": 10.44
+            }
+          },
+          {
+            "label": "Above ৳7.5 Lakh",
+            "yearlyRates": {
+              "1": 8.74,
+              "2": 9.12,
+              "3": 9.53,
+              "4": 9.96,
+              "5": 10.41
+            }
+          }
+        ],
+        "maxInvestment": null,
+        "eligibility": "All citizens"
+      },
+      "3-monthly-profit": {
+        "name": "3-Monthly Profit Basis Sanchayapatra",
+        "tenure": "3 years",
+        "payout": "Quarterly",
+        "tiers": [
+          {
+            "label": "Up to ৳7.5 Lakh",
+            "yearlyRates": {
+              "1": 9.54,
+              "2": 10,
+              "3": 10.48
+            }
+          },
+          {
+            "label": "Above ৳7.5 Lakh",
+            "yearlyRates": {
+              "1": 9.5,
+              "2": 9.95,
+              "3": 10.43
+            }
+          }
+        ],
+        "maxInvestment": null,
+        "eligibility": "All citizens"
+      },
+      "pensioner-sanchayapatra": {
+        "name": "Pensioner Sanchayapatra",
+        "tenure": "5 years",
+        "payout": "On maturity",
+        "tiers": [
+          {
+            "label": "Up to ৳7.5 Lakh",
+            "yearlyRates": {
+              "1": 8.87,
+              "2": 9.28,
+              "3": 9.7,
+              "4": 10.14,
+              "5": 10.59
+            }
+          },
+          {
+            "label": "Above ৳7.5 Lakh",
+            "yearlyRates": {
+              "1": 8.74,
+              "2": 9.12,
+              "3": 9.53,
+              "4": 9.96,
+              "5": 10.41
+            }
+          }
+        ],
+        "maxInvestment": null,
+        "eligibility": "Retirees only"
+      },
+      "family-savings": {
+        "name": "Family Savings Certificate (Paribar Sanchayapatra)",
+        "tenure": "5 years",
+        "payout": "Monthly",
+        "tiers": [
+          {
+            "label": "Up to ৳7.5 Lakh",
+            "yearlyRates": {
+              "1": 8.83,
+              "2": 9.24,
+              "3": 9.66,
+              "4": 10.09,
+              "5": 10.54
+            }
+          },
+          {
+            "label": "Above ৳7.5 Lakh",
+            "yearlyRates": {
+              "1": 8.74,
+              "2": 9.12,
+              "3": 9.53,
+              "4": 9.96,
+              "5": 10.41
+            }
+          }
+        ],
+        "maxInvestment": null,
+        "eligibility": "Families (women优先)"
+      },
+      "wage-earner-bond": {
+        "name": "Wage Earner Development Bond",
+        "tenure": "5 years",
+        "payout": "On maturity",
+        "tiers": [
+          {
+            "label": "Up to ৳15 Lakh",
+            "maturityRate": 12
+          },
+          {
+            "label": "৳15-30 Lakh",
+            "maturityRate": 10.5
+          },
+          {
+            "label": "৳30-50 Lakh",
+            "maturityRate": 9.5
+          },
+          {
+            "label": "Above ৳50 Lakh",
+            "maturityRate": 9
+          }
+        ],
+        "maxInvestment": null,
+        "eligibility": "NRB / Expatriates only",
+        "highlighted": true
+      },
+      "usd-premium-bond": {
+        "name": "US Dollar Premium Bond",
+        "tenure": "3 years",
+        "payout": "Periodic",
+        "currency": "USD",
+        "tiers": [
+          {
+            "label": "Up to $100,000",
+            "yearlyRates": {
+              "1": 6.5,
+              "2": 7,
+              "3": 7.5
+            }
+          },
+          {
+            "label": "Above $100,000",
+            "yearlyRates": {
+              "1": 6,
+              "2": 6.5,
+              "3": 7
+            }
+          }
+        ],
+        "maxInvestment": null,
+        "eligibility": "NRB / Expatriates only",
+        "highlighted": true
+      },
+      "usd-investment-bond": {
+        "name": "US Dollar Investment Bond",
+        "tenure": "3 years",
+        "payout": "On maturity",
+        "currency": "USD",
+        "tiers": [
+          {
+            "label": "Up to $25,000",
+            "yearlyRates": {
+              "1": 5.5,
+              "2": 6,
+              "3": 6.5
+            }
+          },
+          {
+            "label": "Above $25,000",
+            "yearlyRates": {
+              "1": 5,
+              "2": 5.5,
+              "3": 6
+            }
+          }
+        ],
+        "maxInvestment": null,
+        "eligibility": "NRB / Expatriates only"
+      },
+      "post-office-savings": {
+        "name": "Post Office Savings Bank – General Account",
+        "tenure": "Ongoing",
+        "payout": "Annual",
+        "tiers": [
+          {
+            "label": "All amounts",
+            "flatRate": 7.5
+          }
+        ],
+        "maxInvestment": null,
+        "eligibility": "All citizens"
+      }
+    }
+  }
+]

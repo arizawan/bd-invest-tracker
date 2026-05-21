@@ -1,0 +1,13 @@
+{
+  "name": "bd-invest-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Free live Bangladesh investment data tracker for NRB expats",
+  "scripts": {
+    "fetch": "node scripts/fetch-all.js",
+    "fetch:dse": "node scripts/fetch-dse.js",
+    "fetch:bb": "node scripts/fetch-bb.js",
+    "fetch:savings": "node scripts/fetch-savings.js"
+  },
+  "license": "MIT"
+}
