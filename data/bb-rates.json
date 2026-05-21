@@ -1,16 +1,16 @@
 {
-  "fetchedAt": "2026-05-21T11:01:29.146Z",
+  "fetchedAt": "2026-05-21T12:30:16.245Z",
   "exchangeRate": {
     "USD_BDT": {
       "date": "21 May, 2026",
       "am": 122.8156,
-      "pm": null
+      "pm": 122.8133
     },
     "history": [
       {
         "date": "21 May, 2026",
         "am": 122.8156,
-        "pm": null
+        "pm": 122.8133
       },
       {
         "date": "20 May, 2026",
