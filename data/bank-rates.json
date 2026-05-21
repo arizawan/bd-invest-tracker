@@ -1,0 +1,342 @@
+{
+  "fetchedAt": "2026-05-21T09:47:16.029Z",
+  "lastVerified": "2026-05-21",
+  "nextReview": "2026-06-21",
+  "note": "FDR rates are annual nominal rates. Actual yield may vary by tenure and amount. DPS rates are annualized returns.",
+  "banks": {
+    "BRAC Bank": {
+      "type": "Private",
+      "url": "https://bracbank.com",
+      "fdr": {
+        "1_month": {
+          "regular": 5.5,
+          "senior": 6
+        },
+        "3_months": {
+          "regular": 6,
+          "senior": 6.5
+        },
+        "6_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "12_months": {
+          "regular": 7.5,
+          "senior": 8
+        },
+        "24_months": {
+          "regular": 7.75,
+          "senior": 8.25
+        },
+        "36_months": {
+          "regular": 8,
+          "senior": 8.5
+        }
+      },
+      "dps": {
+        "minMonthly": 500,
+        "maxMonthly": 50000,
+        "tenure": "5-10 years",
+        "annualReturn": 7,
+        "note": "BRAC Bank EBL DPS scheme"
+      },
+      "nrb": {
+        "specialFDR": true,
+        "nrbFdrRate": 8.5,
+        "nrbFdrTenure": "12 months",
+        "note": "NRB special FDR for wage earner account holders"
+      }
+    },
+    "Dutch-Bangla Bank": {
+      "type": "Private",
+      "url": "https://www.dbbl.com.bd",
+      "fdr": {
+        "3_months": {
+          "regular": 6,
+          "senior": 6.5
+        },
+        "6_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "12_months": {
+          "regular": 7.5,
+          "senior": 8
+        },
+        "24_months": {
+          "regular": 7.75,
+          "senior": 8.25
+        },
+        "36_months": {
+          "regular": 8,
+          "senior": 8.5
+        }
+      },
+      "dps": {
+        "minMonthly": 500,
+        "maxMonthly": 50000,
+        "tenure": "5-10 years",
+        "annualReturn": 7.25
+      },
+      "nrb": {
+        "specialFDR": true,
+        "nrbFdrRate": 8.25,
+        "nrbFdrTenure": "12 months"
+      }
+    },
+    "Eastern Bank": {
+      "type": "Private",
+      "url": "https://www.ebl.com.bd",
+      "fdr": {
+        "3_months": {
+          "regular": 6,
+          "senior": 6.5
+        },
+        "6_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "12_months": {
+          "regular": 7.5,
+          "senior": 8
+        },
+        "24_months": {
+          "regular": 7.75,
+          "senior": 8.25
+        },
+        "36_months": {
+          "regular": 8,
+          "senior": 8.5
+        }
+      },
+      "dps": {
+        "minMonthly": 500,
+        "maxMonthly": 50000,
+        "tenure": "5-10 years",
+        "annualReturn": 7.5
+      },
+      "nrb": {
+        "specialFDR": false
+      }
+    },
+    "City Bank": {
+      "type": "Private",
+      "url": "https://www.thecitybank.com",
+      "fdr": {
+        "3_months": {
+          "regular": 6,
+          "senior": 6.5
+        },
+        "6_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "12_months": {
+          "regular": 7.5,
+          "senior": 8
+        },
+        "24_months": {
+          "regular": 7.75,
+          "senior": 8.25
+        }
+      },
+      "dps": {
+        "minMonthly": 500,
+        "maxMonthly": 50000,
+        "tenure": "5-10 years",
+        "annualReturn": 7.25
+      },
+      "nrb": {
+        "specialFDR": false
+      }
+    },
+    "Standard Chartered": {
+      "type": "Foreign",
+      "url": "https://www.standardchartered.com/bd",
+      "fdr": {
+        "3_months": {
+          "regular": 5.5,
+          "senior": 6
+        },
+        "6_months": {
+          "regular": 6.5,
+          "senior": 7
+        },
+        "12_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "24_months": {
+          "regular": 7.25,
+          "senior": 7.75
+        }
+      },
+      "dps": {
+        "minMonthly": 1000,
+        "maxMonthly": 100000,
+        "tenure": "5-10 years",
+        "annualReturn": 6.5
+      },
+      "nrb": {
+        "specialFDR": false
+      }
+    },
+    "Sonali Bank": {
+      "type": "State-owned",
+      "url": "https://www.sonalibank.com.bd",
+      "fdr": {
+        "3_months": {
+          "regular": 6,
+          "senior": 6.5
+        },
+        "6_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "12_months": {
+          "regular": 7.5,
+          "senior": 8
+        },
+        "24_months": {
+          "regular": 7.75,
+          "senior": 8.25
+        },
+        "36_months": {
+          "regular": 8,
+          "senior": 8.5
+        }
+      },
+      "dps": {
+        "minMonthly": 300,
+        "maxMonthly": 20000,
+        "tenure": "5-10 years",
+        "annualReturn": 7
+      },
+      "nrb": {
+        "specialFDR": true,
+        "nrbFdrRate": 8,
+        "nrbFdrTenure": "12 months"
+      }
+    },
+    "Janata Bank": {
+      "type": "State-owned",
+      "url": "https://www.janatabank.com.bd",
+      "fdr": {
+        "3_months": {
+          "regular": 6,
+          "senior": 6.5
+        },
+        "6_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "12_months": {
+          "regular": 7.5,
+          "senior": 8
+        },
+        "36_months": {
+          "regular": 8,
+          "senior": 8.5
+        }
+      },
+      "dps": {
+        "minMonthly": 300,
+        "maxMonthly": 20000,
+        "tenure": "5-10 years",
+        "annualReturn": 7
+      },
+      "nrb": {
+        "specialFDR": false
+      }
+    },
+    "Agrani Bank": {
+      "type": "State-owned",
+      "url": "https://www.agranibank.org",
+      "fdr": {
+        "3_months": {
+          "regular": 6,
+          "senior": 6.5
+        },
+        "6_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "12_months": {
+          "regular": 7.5,
+          "senior": 8
+        },
+        "36_months": {
+          "regular": 8,
+          "senior": 8.5
+        }
+      },
+      "dps": {
+        "minMonthly": 300,
+        "maxMonthly": 20000,
+        "tenure": "5-10 years",
+        "annualReturn": 7
+      },
+      "nrb": {
+        "specialFDR": false
+      }
+    },
+    "MTB (Mutual Trust)": {
+      "type": "Private",
+      "url": "https://www.mutualtrustbank.com",
+      "fdr": {
+        "3_months": {
+          "regular": 6,
+          "senior": 6.5
+        },
+        "6_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "12_months": {
+          "regular": 7.5,
+          "senior": 8
+        },
+        "24_months": {
+          "regular": 7.75,
+          "senior": 8.25
+        }
+      },
+      "dps": {
+        "minMonthly": 500,
+        "maxMonthly": 30000,
+        "tenure": "5-10 years",
+        "annualReturn": 7
+      },
+      "nrb": {
+        "specialFDR": false
+      }
+    },
+    "Pubali Bank": {
+      "type": "Private",
+      "url": "https://www.pubalibangla.com",
+      "fdr": {
+        "3_months": {
+          "regular": 6,
+          "senior": 6.5
+        },
+        "6_months": {
+          "regular": 7,
+          "senior": 7.5
+        },
+        "12_months": {
+          "regular": 7.5,
+          "senior": 8
+        }
+      },
+      "dps": {
+        "minMonthly": 500,
+        "maxMonthly": 30000,
+        "tenure": "5-10 years",
+        "annualReturn": 7
+      },
+      "nrb": {
+        "specialFDR": false
+      }
+    }
+  }
+}

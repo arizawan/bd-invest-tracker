@@ -3,8 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BD Invest Tracker — Bangladesh Investment Data for NRB Expats</title>
-  <meta name="description" content="Live Bangladesh investment data: stock prices, exchange rates, savings certificate rates. Free, updated daily.">
+  <title>BD Invest Tracker — Free Bangladesh Investment Data | DSE, Exchange Rates, FDR, Sanchayapatra</title>
+  <meta name="description" content="Free live Bangladesh investment tracker: DSE stock prices, USD/BDT exchange rate, multi-currency rates, Sanchayapatra savings certificate rates, bank FDR & DPS rates. Updated daily for NRB expats.">
+  <meta name="keywords" content="Bangladesh investment, DSE stock prices, USD BDT exchange rate, Sanchayapatra rates, FDR rates Bangladesh, bank deposit rates, NRB investment, Bangladesh fixed deposit, DPS rates, DSEX index, Bangladesh Bank rates, expat investment Bangladesh">
+  <meta name="author" content="BD Invest Tracker">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arizawan.github.io/bd-invest-tracker/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BD Invest Tracker — Free Bangladesh Investment Data">
+  <meta property="og:description" content="Live DSE stocks, exchange rates (11 currencies), Sanchayapatra, bank FDR & DPS rates. 100% free, updated daily.">
+  <meta property="og:url" content="https://arizawan.github.io/bd-invest-tracker/">
+  <meta property="og:site_name" content="BD Invest Tracker">
+  <meta property="og:locale" content="en_BD">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BD Invest Tracker — Free Bangladesh Investment Data">
+  <meta name="twitter:description" content="Live DSE stocks, exchange rates, Sanchayapatra, bank FDR & DPS rates. Updated daily for NRB expats.">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BD Invest Tracker",
+    "url": "https://arizawan.github.io/bd-invest-tracker/",
+    "description": "Free live Bangladesh investment data dashboard for NRB expats. Track DSE stocks, exchange rates, savings certificates, and bank deposit rates.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "isAccessibleForFree": true,
+    "author": {
+      "@type": "Person",
+      "name": "NRB Developer"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Bangladesh"
+    },
+    "inLanguage": "en",
+    "about": [
+      {"@type": "Thing", "name": "Dhaka Stock Exchange"},
+      {"@type": "Thing", "name": "Bangladesh Bank exchange rates"},
+      {"@type": "Thing", "name": "Sanchayapatra savings certificates"},
+      {"@type": "Thing", "name": "Bangladesh bank fixed deposit rates"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "BD Invest Tracker",
+    "description": "Free tracker for Bangladesh DSE stocks, USD/BDT exchange rates, Sanchayapatra rates, bank FDR and DPS rates",
+    "url": "https://arizawan.github.io/bd-invest-tracker/"
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇧🇩</text></svg>">
 </head>
@@ -14,7 +75,7 @@
       <div class="header-content">
         <div>
           <h1>🇧🇩 BD Invest Tracker</h1>
-          <p class="subtitle">Live Bangladesh investment data for NRB expats — completely free</p>
+          <p class="subtitle">Free live Bangladesh investment data for NRB expats — stocks, exchange rates, savings &amp; deposit rates</p>
         </div>
         <div class="header-meta" id="last-updated">
           Loading...
@@ -25,7 +86,7 @@
 
   <main class="container">
     <!-- Market Overview Cards -->
-    <section class="section">
+    <section class="section" aria-label="Market Overview">
       <h2>📊 Market Overview</h2>
       <div class="card-grid">
         <div class="card card-primary">
@@ -51,9 +112,32 @@
       </div>
     </section>
 
-    <!-- Exchange Rate History -->
-    <section class="section">
-      <h2>💱 USD/BDT Exchange Rate History</h2>
+    <!-- Multi-Currency Exchange Rates -->
+    <section class="section" aria-label="Exchange Rates">
+      <h2>💱 BDT Exchange Rates — All Currencies</h2>
+      <p class="section-note">Bangladesh Bank interbank rates · <span id="cross-rate-date">—</span></p>
+      <div class="card">
+        <div class="table-responsive">
+          <table id="cross-rates-table">
+            <thead>
+              <tr>
+                <th>Currency</th>
+                <th>Buy (BDT)</th>
+                <th>Sell (BDT)</th>
+                <th>1 Unit =</th>
+              </tr>
+            </thead>
+            <tbody id="cross-rates-body">
+              <tr><td colspan="4" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- USD/BDT History -->
+    <section class="section" aria-label="USD BDT Exchange Rate History">
+      <h2>📈 USD/BDT Exchange Rate History</h2>
       <div class="card">
         <div class="table-responsive">
           <table id="fx-history">
@@ -72,9 +156,60 @@
       </div>
     </section>
 
-    <!-- Savings Certificates -->
-    <section class="section">
-      <h2>🏛️ Sanchayapatra Rates</h2>
+    <!-- Bank FDR Rates -->
+    <section class="section" aria-label="Bank Fixed Deposit Rates">
+      <h2>🏦 Bank Fixed Deposit (FDR) Rates</h2>
+      <p class="section-note">Last verified: <span id="bank-verified-date">—</span> · Rates are indicative — confirm with bank before investing</p>
+      <div class="card">
+        <div class="table-responsive">
+          <table id="fdr-table">
+            <thead>
+              <tr>
+                <th>Bank</th>
+                <th>Type</th>
+                <th>3 Month</th>
+                <th>6 Month</th>
+                <th>12 Month</th>
+                <th>24 Month</th>
+                <th>36 Month</th>
+                <th>NRB Special</th>
+              </tr>
+            </thead>
+            <tbody id="fdr-body">
+              <tr><td colspan="8" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bank DPS Rates -->
+    <section class="section" aria-label="Bank Deposit Pension Scheme Rates">
+      <h2>💳 Bank DPS (Deposit Pension Scheme) Rates</h2>
+      <p class="section-note">Monthly savings scheme — save fixed amount monthly, get lump sum at maturity</p>
+      <div class="card">
+        <div class="table-responsive">
+          <table id="dps-table">
+            <thead>
+              <tr>
+                <th>Bank</th>
+                <th>Annual Return</th>
+                <th>Min/ Month</th>
+                <th>Max/ Month</th>
+                <th>Tenure</th>
+              </tr>
+            </thead>
+            <tbody id="dps-body">
+              <tr><td colspan="5" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sanchayapatra Rates -->
+    <section class="section" aria-label="Sanchayapatra Savings Certificate Rates">
+      <h2>🏛️ Sanchayapatra (Savings Certificate) Rates</h2>
       <p class="section-note">Effective: <span id="savings-date">—</span> · Next review: <span id="savings-review">—</span></p>
       <div class="card">
         <div class="table-responsive">
@@ -100,8 +235,8 @@
       </details>
     </section>
 
-    <!-- DSE Top Stocks -->
-    <section class="section">
+    <!-- DSE Stocks -->
+    <section class="section" aria-label="DSE Stock Prices">
       <h2>📈 DSE Top Stocks by Price</h2>
       <div class="card">
         <div class="table-responsive">
@@ -124,8 +259,33 @@
       </div>
     </section>
 
-    <!-- DSE Market Summary -->
-    <section class="section">
+    <!-- Top Gainers & Losers -->
+    <section class="section" aria-label="DSE Top Gainers and Losers">
+      <h2>🏆 Top Gainers &amp; Losers</h2>
+      <div class="card-grid">
+        <div class="card card-green-light">
+          <h3>🟢 Top Gainers</h3>
+          <table class="inner-table">
+            <thead><tr><th>Code</th><th>Price</th><th>Change</th></tr></thead>
+            <tbody id="gainers-body">
+              <tr><td colspan="3" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card card-red-light">
+          <h3>🔴 Top Losers</h3>
+          <table class="inner-table">
+            <thead><tr><th>Code</th><th>Price</th><th>Change</th></tr></thead>
+            <tbody id="losers-body">
+              <tr><td colspan="3" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Market Statistics -->
+    <section class="section" aria-label="DSE Market Statistics">
       <h2>📋 Market Statistics</h2>
       <div class="card-grid card-grid-3">
         <div class="card">
@@ -156,7 +316,7 @@
     </section>
 
     <!-- NRB Guide -->
-    <section class="section">
+    <section class="section" aria-label="NRB Expat Investment Guide">
       <h2>🎒 NRB Expat Quick Guide</h2>
       <div class="card-grid">
         <div class="card card-highlight">
@@ -191,8 +351,8 @@
   <footer>
     <div class="container">
       <p>Data sources: <a href="https://www.dsebd.org" target="_blank" rel="noopener">DSE</a> · <a href="https://www.bb.org.bd" target="_blank" rel="noopener">Bangladesh Bank</a> · <a href="https://ird.gov.bd" target="_blank" rel="noopener">IRD</a></p>
-      <p>⚠️ Not financial advice. Verify all data before investing. Built by an NRB for NRbs.</p>
-      <p>100% free · Open source · <a href="https://github.com" target="_blank" rel="noopener">GitHub</a></p>
+      <p>⚠️ Not financial advice. Verify all data before investing. Built by an NRB for NRBs.</p>
+      <p>100% free · Open source · <a href="https://github.com/arizawan/bd-invest-tracker" target="_blank" rel="noopener">GitHub</a></p>
     </div>
   </footer>
 

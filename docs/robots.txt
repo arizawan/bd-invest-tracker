@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arizawan.github.io/bd-invest-tracker/sitemap.xml

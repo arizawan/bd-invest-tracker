@@ -1,5 +1,8 @@
 /**
- * Fetch Bangladesh Bank data - exchange rates, interest rates, money market
+ * Fetch Bangladesh Bank data
+ * - USD/BDT reference rate (AM/PM)
+ * - Cross rates (EUR, GBP, SGD, INR, JPY, AUD, CAD, etc.)
+ * - Call money rate, MMRR
  */
 const https = require('https');
 const http = require('http');
@@ -27,29 +30,7 @@ function stripHtml(html) {
   return html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
 }
 
-function parseExchangeRates(html) {
-  const rates = [];
-  // Parse the FX rate table from Bangladesh Bank
-  const tableMatch = html.match(/<table[^>]*class="table"[^>]*>([\s\S]*?)<\/table>/i);
-  if (!tableMatch) return rates;
-
-  const rows = tableMatch[1].match(/<tr[^>]*>([\s\S]*?)<\/tr>/gi) || [];
-  for (const row of rows) {
-    const cells = row.match(/<td[^>]*>([\s\S]*?)<\/td>/gi) || [];
-    if (cells.length >= 3) {
-      const currency = stripHtml(cells[0]);
-      const buyRate = parseFloat(stripHtml(cells[1]).replace(/,/g, ''));
-      const sellRate = parseFloat(stripHtml(cells[2]).replace(/,/g, ''));
-      if (currency && !isNaN(buyRate)) {
-        rates.push({ currency, buy: buyRate, sell: isNaN(sellRate) ? null : sellRate });
-      }
-    }
-  }
-  return rates;
-}
-
 function parseReferenceRate(html) {
-  // Parse the spot reference rate table
   const rates = [];
   const rows = html.match(/<tr[^>]*>([\s\S]*?)<\/tr>/gi) || [];
   for (const row of rows) {
@@ -66,20 +47,70 @@ function parseReferenceRate(html) {
   return rates;
 }
 
+/**
+ * Parse cross rates from BB exchange rate page.
+ * The markdown-like page has tables with Currency | Bid Rate | Ask Rate.
+ * But the HTML version has <table> elements.
+ */
+function parseCrossRates(html) {
+  const rates = {};
+
+  // Try HTML table parsing first
+  const tableMatches = html.match(/<table[^>]*>([\s\S]*?)<\/table>/gi) || [];
+  for (const table of tableMatches) {
+    const rows = table.match(/<tr[^>]*>([\s\S]*?)<\/tr>/gi) || [];
+    for (const row of rows) {
+      const cells = row.match(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi) || [];
+      if (cells.length >= 3) {
+        const ccy = stripHtml(cells[0]).trim();
+        const bid = parseFloat(stripHtml(cells[1]).replace(/,/g, ''));
+        const ask = parseFloat(stripHtml(cells[2]).replace(/,/g, ''));
+        if (ccy && ccy.length === 3 && !isNaN(bid)) {
+          rates[ccy] = { bid, ask: isNaN(ask) ? bid : ask };
+        }
+      }
+    }
+  }
+
+  // Fallback: parse markdown-style table from the fetched text
+  if (Object.keys(rates).length === 0) {
+    const lines = html.split('\n');
+    for (const line of lines) {
+      const m = line.match(/^\|\s*([A-Z]{3})\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|/);
+      if (m) {
+        rates[m[1]] = { bid: parseFloat(m[2]), ask: parseFloat(m[3]) };
+      }
+    }
+  }
+
+  return rates;
+}
+
 async function main() {
   try {
     console.log('Fetching Bangladesh Bank data...');
 
-    // Fetch USD/BDT reference rate
+    // 1. USD/BDT reference rate
     let referenceRates = [];
     try {
       const refHtml = await fetch('https://www.bb.org.bd/en/index.php/econdata/rfrexrate');
       referenceRates = parseReferenceRate(refHtml);
+      console.log(`  Reference rates: ${referenceRates.length} days`);
     } catch (e) {
-      console.warn('Could not fetch reference rate:', e.message);
+      console.warn('  Could not fetch reference rate:', e.message);
     }
 
-    // Fetch main page for call money rate and MMRR
+    // 2. Cross rates (multi-currency)
+    let crossRates = {};
+    try {
+      const crossHtml = await fetch('https://www.bb.org.bd/en/index.php/econdata/exchangerate');
+      crossRates = parseCrossRates(crossHtml);
+      console.log(`  Cross rates: ${Object.keys(crossRates).join(', ')}`);
+    } catch (e) {
+      console.warn('  Could not fetch cross rates:', e.message);
+    }
+
+    // 3. Main page for call money rate and MMRR
     let callMoneyRate = null;
     let mmrr = null;
     try {
@@ -91,17 +122,19 @@ async function main() {
       if (mmrrMatch) mmrr = { DOMMR: parseFloat(mmrrMatch[1]) };
 
       const bofrMatch = mainHtml.match(/BOFR[^]*?(\d+\.?\d*)/);
-      if (bofrMatch) mmrr.BOFR = parseFloat(bofrMatch[1]);
+      if (bofrMatch) mmrr = mmrr || {};
+      if (bofrMatch && mmrr) mmrr.BOFR = parseFloat(bofrMatch[1]);
     } catch (e) {
-      console.warn('Could not fetch BB main page:', e.message);
+      console.warn('  Could not fetch BB main page:', e.message);
     }
 
     const bbData = {
       fetchedAt: new Date().toISOString(),
       exchangeRate: {
         USD_BDT: referenceRates.length > 0 ? referenceRates[0] : null,
-        history: referenceRates.slice(0, 20),
+        history: referenceRates.slice(0, 30),
       },
+      crossRates,
       moneyMarket: {
         callMoneyRate,
         mmrr,
@@ -109,7 +142,7 @@ async function main() {
     };
 
     fs.writeFileSync(path.join(DATA_DIR, 'bb-rates.json'), JSON.stringify(bbData, null, 2));
-    console.log(`BB data saved: USD/BDT=${JSON.stringify(bbData.exchangeRate.USD_BDT)}, call rate=${callMoneyRate}`);
+    console.log(`BB data saved: USD/BDT=${JSON.stringify(bbData.exchangeRate.USD_BDT)}, cross=${Object.keys(crossRates).length} currencies, call=${callMoneyRate}`);
   } catch (err) {
     console.error('Error fetching BB data:', err.message);
     process.exit(1);

@@ -57,7 +57,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add data/ docs/data/ docs/app.js
+            git add data/ docs/data/ docs/app.js docs/sitemap.xml docs/robots.txt
           git commit -m "chore: update investment data $(date +%Y-%m-%d)"
           git push
 

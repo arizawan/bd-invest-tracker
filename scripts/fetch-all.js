@@ -34,6 +34,7 @@ function main() {
   runScript('fetch-dse.js');
   runScript('fetch-bb.js');
   runScript('fetch-savings.js');
+  runScript('fetch-banks.js');
 
   // Write last-updated timestamp
   const timestamp = {
