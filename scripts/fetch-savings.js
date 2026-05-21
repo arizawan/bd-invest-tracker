@@ -73,7 +73,7 @@ const HARDCODED_RATES = {
         { label: 'Above ৳7.5 Lakh', yearlyRates: { 1: 8.74, 2: 9.12, 3: 9.53, 4: 9.96, 5: 10.41 } },
       ],
       maxInvestment: null,
-      eligibility: 'Families (women优先)',
+      eligibility: 'Families (women prioritized)',
     },
     'wage-earner-bond': {
       name: 'Wage Earner Development Bond',

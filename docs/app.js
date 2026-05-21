@@ -181,14 +181,14 @@
       return;
     }
 
-    tbody.innerHTML = dseData.topStocks.map(s => `
+    tbody.innerHTML = dseData.topStocks.map((s, i) => `
       <tr>
-        <td>${s.rank}</td>
+        <td>${i + 1}</td>
         <td><strong>${s.code}</strong></td>
         <td>${fmt(s.ltp)}</td>
-        <td>${fmt(s.high)}</td>
-        <td>${fmt(s.low)}</td>
+        <td>${s.direction === 'up' ? '↑' : s.direction === 'down' ? '↓' : '—'}</td>
         <td class="${changeClass(s.change)}">${changeText(s.change)}</td>
+        <td class="${changeClass(s.changePct)}">${s.changePct > 0 ? '+' : ''}${fmt(s.changePct)}%</td>
       </tr>
     `).join('');
   }
