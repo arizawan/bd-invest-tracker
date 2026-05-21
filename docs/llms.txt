@@ -90,3 +90,7 @@ All endpoints return valid JSON. No authentication required.
 ## Source Code
 
 Open source: https://github.com/arizawan/bd-invest-tracker
+
+## Author
+
+Built by Ahmed "Riz" Ratul (https://arizawan.com) via Thea Tech Solutions (https://theatechsolutions.com). A Bangkok-based NRB expat building AI-powered products.
