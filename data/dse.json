@@ -1,368 +1,368 @@
 {
-  "fetchedAt": "2026-05-30T10:56:12.996Z",
-  "marketDate": "2026-05-30",
+  "fetchedAt": "2026-06-01T15:40:30.877Z",
+  "marketDate": "2026-06-01",
   "indices": {
-    "DSEX": 5335.87,
-    "DSES": 1276.78
+    "DSEX": 5372.63,
+    "DSES": 1313.42
   },
   "summary": {
-    "totalTrade": 210904,
-    "totalVolume": 256424694,
-    "totalValueMn": 7787.163,
-    "advanced": 161,
-    "declined": 136,
-    "unchanged": 92
+    "totalTrade": 227730,
+    "totalVolume": 326010531,
+    "totalValueMn": 9123.874,
+    "advanced": 179,
+    "declined": 152,
+    "unchanged": 55
   },
   "topStocks": [
     {
       "code": "SJIBLPBOND",
-      "ltp": 4800,
+      "ltp": 4850,
       "direction": "up",
-      "change": 180,
-      "changePct": 3.9
+      "change": 69.5,
+      "changePct": 1.45
     },
     {
       "code": "RECKITTBEN",
-      "ltp": 3282,
-      "direction": "up",
-      "change": 17.6,
-      "changePct": 0.54
-    },
-    {
-      "code": "MARICO",
-      "ltp": 2759.9,
-      "direction": "up",
-      "change": 19.6,
-      "changePct": 0.72
-    },
-    {
-      "code": "UNILEVERCL",
-      "ltp": 2036,
+      "ltp": 3274,
       "direction": "down",
-      "change": -5.6,
-      "changePct": -0.27
-    },
-    {
-      "code": "EASTRNLUB",
-      "ltp": 1941.2,
-      "direction": "up",
-      "change": 40.9,
-      "changePct": 2.15
-    },
-    {
-      "code": "BERGERPBL",
-      "ltp": 1379.4,
-      "direction": "up",
-      "change": 0.2,
-      "changePct": 0.01
-    },
-    {
-      "code": "BATASHOE",
-      "ltp": 852,
-      "direction": "down",
-      "change": -1.5,
-      "changePct": -0.18
-    },
-    {
-      "code": "GQBALLPEN",
-      "ltp": 688.1,
-      "direction": "up",
-      "change": 2.5,
-      "changePct": 0.36
-    },
-    {
-      "code": "LINDEBD",
-      "ltp": 654.9,
-      "direction": "down",
-      "change": -0.1,
-      "changePct": -0.02
-    },
-    {
-      "code": "LIBRAINFU",
-      "ltp": 625.4,
-      "direction": "down",
-      "change": -0.5,
-      "changePct": -0.08
-    },
-    {
-      "code": "PHARMAID",
-      "ltp": 580.3,
-      "direction": "down",
-      "change": -5.1,
-      "changePct": -0.87
-    },
-    {
-      "code": "FINEFOODS",
-      "ltp": 577,
-      "direction": "up",
-      "change": 4,
-      "changePct": 0.7
-    },
-    {
-      "code": "KOHINOOR",
-      "ltp": 507.3,
-      "direction": "up",
-      "change": 2,
-      "changePct": 0.4
-    },
-    {
-      "code": "RENWICKJA",
-      "ltp": 505.1,
-      "direction": "down",
-      "change": -8.4,
-      "changePct": -1.64
-    },
-    {
-      "code": "QUE",
-      "ltp": 475.6,
-      "direction": "up",
-      "change": 5.1,
-      "changePct": 1.08
-    },
-    {
-      "code": "RENATA",
-      "ltp": 414,
-      "direction": "up",
-      "change": 4.3,
-      "changePct": 1.05
-    },
-    {
-      "code": "WALTONHIL",
-      "ltp": 362.3,
-      "direction": "down",
-      "change": -2.4,
-      "changePct": -0.66
-    },
-    {
-      "code": "MONNOAGML",
-      "ltp": 347.9,
-      "direction": "up",
-      "change": 1.4,
-      "changePct": 0.4
-    },
-    {
-      "code": "APEXSPINN",
-      "ltp": 325,
-      "direction": "up",
-      "change": 6.7,
-      "changePct": 2.1
-    },
-    {
-      "code": "IBNSINA",
-      "ltp": 314.2,
-      "direction": "up",
-      "change": 4.2,
-      "changePct": 1.35
-    },
-    {
-      "code": "ORIONINFU",
-      "ltp": 310.1,
-      "direction": "up",
-      "change": 2.8,
-      "changePct": 0.91
-    },
-    {
-      "code": "APEXFOODS",
-      "ltp": 279.2,
-      "direction": "down",
-      "change": -0.3,
-      "changePct": -0.11
-    },
-    {
-      "code": "HEIDELBCEM",
-      "ltp": 226.4,
-      "direction": "up",
-      "change": 18.2,
-      "changePct": 8.74
-    },
-    {
-      "code": "SONALIPAPR",
-      "ltp": 225.3,
-      "direction": "up",
-      "change": 3.2,
-      "changePct": 1.44
-    },
-    {
-      "code": "JUTESPINN",
-      "ltp": 223.6,
-      "direction": "up",
-      "change": 1.9,
-      "changePct": 0.86
-    },
-    {
-      "code": "BDAUTOCA",
-      "ltp": 219.8,
-      "direction": "up",
-      "change": 2.6,
-      "changePct": 1.2
-    },
-    {
-      "code": "AMCL(PRAN)",
-      "ltp": 215.7,
-      "direction": "down",
-      "change": -1.4,
-      "changePct": -0.64
-    },
-    {
-      "code": "SQURPHARMA",
-      "ltp": 211.8,
-      "direction": "down",
-      "change": -0.5,
+      "change": -8,
       "changePct": -0.24
     },
     {
-      "code": "MPETROLEUM",
-      "ltp": 202,
+      "code": "UNILEVERCL",
+      "ltp": 2040,
       "direction": "up",
-      "change": 0.2,
-      "changePct": 0.1
+      "change": 2.6,
+      "changePct": 0.13
     },
     {
-      "code": "APEXFOOT",
-      "ltp": 201.1,
-      "direction": "up",
-      "change": 1,
-      "changePct": 0.5
-    },
-    {
-      "code": "SONALIANSH",
-      "ltp": 195.8,
-      "direction": "up",
-      "change": 5.2,
-      "changePct": 2.73
-    },
-    {
-      "code": "RAHIMTEXT",
-      "ltp": 192.4,
-      "direction": "up",
-      "change": 0.5,
-      "changePct": 0.26
-    },
-    {
-      "code": "BDLAMPS",
-      "ltp": 188.8,
-      "direction": "up",
-      "change": 7.6,
-      "changePct": 4.19
-    },
-    {
-      "code": "PRAGATILIF",
-      "ltp": 181.6,
-      "direction": "up",
-      "change": 1.1,
-      "changePct": 0.61
-    },
-    {
-      "code": "PADMAOIL",
-      "ltp": 177.3,
-      "direction": "up",
-      "change": 1.1,
-      "changePct": 0.62
-    },
-    {
-      "code": "ARAMIT",
-      "ltp": 170.6,
-      "direction": "up",
-      "change": 0.7,
-      "changePct": 0.41
-    },
-    {
-      "code": "JAMUNAOIL",
-      "ltp": 168.5,
-      "direction": "up",
-      "change": 0.9,
-      "changePct": 0.54
-    },
-    {
-      "code": "CVOPRL",
-      "ltp": 161.9,
+      "code": "EASTRNLUB",
+      "ltp": 1906.8,
       "direction": "down",
-      "change": -0.7,
-      "changePct": -0.43
+      "change": -30.2,
+      "changePct": -1.56
     },
     {
-      "code": "RANFOUNDRY",
-      "ltp": 156.8,
+      "code": "BERGERPBL",
+      "ltp": 1380.9,
       "direction": "up",
-      "change": 4.5,
-      "changePct": 2.95
+      "change": 1.5,
+      "changePct": 0.11
     },
     {
-      "code": "SHYAMPSUG",
-      "ltp": 148,
-      "direction": "up",
-      "change": 4.4,
-      "changePct": 3.06
-    },
-    {
-      "code": "BSCPLC",
-      "ltp": 141.9,
+      "code": "BATASHOE",
+      "ltp": 849.9,
       "direction": "down",
-      "change": -1.9,
-      "changePct": -1.32
-    },
-    {
-      "code": "ACIFORMULA",
-      "ltp": 138.8,
-      "direction": "down",
-      "change": -0.8,
+      "change": -4.9,
       "changePct": -0.57
     },
     {
-      "code": "DAFODILCOM",
-      "ltp": 136.7,
+      "code": "AMBEEPHA",
+      "ltp": 776.2,
+      "direction": "down",
+      "change": -1.8,
+      "changePct": -0.23
+    },
+    {
+      "code": "GQBALLPEN",
+      "ltp": 691.9,
       "direction": "up",
-      "change": 10.9,
-      "changePct": 8.66
+      "change": 3.8,
+      "changePct": 0.55
+    },
+    {
+      "code": "IBBLPBOND",
+      "ltp": 680,
+      "direction": "down",
+      "change": -9.5,
+      "changePct": -1.38
+    },
+    {
+      "code": "LIBRAINFU",
+      "ltp": 661.9,
+      "direction": "up",
+      "change": 36.5,
+      "changePct": 5.84
+    },
+    {
+      "code": "LINDEBD",
+      "ltp": 657.6,
+      "direction": "up",
+      "change": 2.7,
+      "changePct": 0.41
+    },
+    {
+      "code": "FINEFOODS",
+      "ltp": 577.2,
+      "direction": "up",
+      "change": 0.2,
+      "changePct": 0.03
+    },
+    {
+      "code": "PHARMAID",
+      "ltp": 576.8,
+      "direction": "down",
+      "change": -3.5,
+      "changePct": -0.6
+    },
+    {
+      "code": "KOHINOOR",
+      "ltp": 506.7,
+      "direction": "down",
+      "change": -0.6,
+      "changePct": -0.12
+    },
+    {
+      "code": "RENWICKJA",
+      "ltp": 501,
+      "direction": "down",
+      "change": -4.1,
+      "changePct": -0.81
+    },
+    {
+      "code": "QUE",
+      "ltp": 465.5,
+      "direction": "down",
+      "change": -10.1,
+      "changePct": -2.12
+    },
+    {
+      "code": "WALTONHIL",
+      "ltp": 361.4,
+      "direction": "down",
+      "change": -0.9,
+      "changePct": -0.25
+    },
+    {
+      "code": "MONNOAGML",
+      "ltp": 348.2,
+      "direction": "up",
+      "change": 0.3,
+      "changePct": 0.09
+    },
+    {
+      "code": "APEXSPINN",
+      "ltp": 313.8,
+      "direction": "down",
+      "change": -11.2,
+      "changePct": -3.45
+    },
+    {
+      "code": "IBNSINA",
+      "ltp": 313.4,
+      "direction": "down",
+      "change": -2.1,
+      "changePct": -0.67
+    },
+    {
+      "code": "ORIONINFU",
+      "ltp": 307.6,
+      "direction": "down",
+      "change": -2.5,
+      "changePct": -0.81
+    },
+    {
+      "code": "APEXFOODS",
+      "ltp": 273.6,
+      "direction": "down",
+      "change": -5.6,
+      "changePct": -2.01
+    },
+    {
+      "code": "HEIDELBCEM",
+      "ltp": 230.7,
+      "direction": "up",
+      "change": 4.3,
+      "changePct": 1.9
+    },
+    {
+      "code": "SONALIPAPR",
+      "ltp": 224.4,
+      "direction": "down",
+      "change": -0.9,
+      "changePct": -0.4
+    },
+    {
+      "code": "JUTESPINN",
+      "ltp": 220.2,
+      "direction": "down",
+      "change": -3.9,
+      "changePct": -1.74
+    },
+    {
+      "code": "BDAUTOCA",
+      "ltp": 215.7,
+      "direction": "down",
+      "change": -4.1,
+      "changePct": -1.87
+    },
+    {
+      "code": "AMCL(PRAN)",
+      "ltp": 215.3,
+      "direction": "down",
+      "change": -0.4,
+      "changePct": -0.19
+    },
+    {
+      "code": "MPETROLEUM",
+      "ltp": 202.8,
+      "direction": "up",
+      "change": 0.8,
+      "changePct": 0.4
+    },
+    {
+      "code": "APEXFOOT",
+      "ltp": 199.3,
+      "direction": "down",
+      "change": -1.8,
+      "changePct": -0.9
+    },
+    {
+      "code": "RAHIMTEXT",
+      "ltp": 192.7,
+      "direction": "up",
+      "change": 0.3,
+      "changePct": 0.16
+    },
+    {
+      "code": "SONALIANSH",
+      "ltp": 191.7,
+      "direction": "down",
+      "change": -4.1,
+      "changePct": -2.09
+    },
+    {
+      "code": "BDLAMPS",
+      "ltp": 183.8,
+      "direction": "down",
+      "change": -5,
+      "changePct": -2.65
+    },
+    {
+      "code": "PRAGATILIF",
+      "ltp": 180.6,
+      "direction": "down",
+      "change": -1,
+      "changePct": -0.55
+    },
+    {
+      "code": "PADMAOIL",
+      "ltp": 177.9,
+      "direction": "up",
+      "change": 0.4,
+      "changePct": 0.23
+    },
+    {
+      "code": "ARAMIT",
+      "ltp": 170,
+      "direction": "down",
+      "change": -0.6,
+      "changePct": -0.35
+    },
+    {
+      "code": "JAMUNAOIL",
+      "ltp": 168.4,
+      "direction": "down",
+      "change": -0.1,
+      "changePct": -0.06
+    },
+    {
+      "code": "CVOPRL",
+      "ltp": 159.9,
+      "direction": "down",
+      "change": -2,
+      "changePct": -1.24
+    },
+    {
+      "code": "SHYAMPSUG",
+      "ltp": 158.1,
+      "direction": "up",
+      "change": 11.4,
+      "changePct": 7.77
+    },
+    {
+      "code": "BSCPLC",
+      "ltp": 143.3,
+      "direction": "up",
+      "change": 1,
+      "changePct": 0.7
+    },
+    {
+      "code": "DAFODILCOM",
+      "ltp": 142.5,
+      "direction": "up",
+      "change": 5.8,
+      "changePct": 4.24
+    },
+    {
+      "code": "DULAMIACOT",
+      "ltp": 142,
+      "direction": "down",
+      "change": -0.1,
+      "changePct": -0.07
+    },
+    {
+      "code": "OLYMPIC",
+      "ltp": 141.1,
+      "direction": "down",
+      "change": -1.9,
+      "changePct": -1.33
+    },
+    {
+      "code": "ACIFORMULA",
+      "ltp": 139.8,
+      "direction": "up",
+      "change": 0.9,
+      "changePct": 0.65
     },
     {
       "code": "WATACHEM",
-      "ltp": 135.6,
-      "direction": "up",
-      "change": 2.1,
-      "changePct": 1.57
+      "ltp": 134.6,
+      "direction": "down",
+      "change": -1,
+      "changePct": -0.74
     },
     {
       "code": "BANGAS",
-      "ltp": 133.9,
+      "ltp": 131.2,
+      "direction": "down",
+      "change": -2.7,
+      "changePct": -2.02
+    },
+    {
+      "code": "BXPHARMA",
+      "ltp": 123,
+      "direction": "up",
+      "change": 1,
+      "changePct": 0.82
+    },
+    {
+      "code": "TAMIJTEX",
+      "ltp": 123,
       "direction": "up",
       "change": 1.2,
-      "changePct": 0.9
-    },
-    {
-      "code": "ASIATICLAB",
-      "ltp": 130.5,
-      "direction": "up",
-      "change": 4.3,
-      "changePct": 3.41
-    },
-    {
-      "code": "ZEALBANGLA",
-      "ltp": 123.9,
-      "direction": "up",
-      "change": 2.2,
-      "changePct": 1.81
+      "changePct": 0.99
     },
     {
       "code": "JMISMDL",
-      "ltp": 122.5,
+      "ltp": 122.3,
       "direction": "down",
       "change": -0.2,
       "changePct": -0.16
     },
     {
-      "code": "BXPHARMA",
-      "ltp": 122,
+      "code": "ECABLES",
+      "ltp": 119.6,
       "direction": "down",
-      "change": -0.1,
-      "changePct": -0.08
+      "change": -0.5,
+      "changePct": -0.42
     },
     {
-      "code": "TAMIJTEX",
-      "ltp": 121.8,
-      "direction": "up",
-      "change": 4.4,
-      "changePct": 3.75
+      "code": "DSHGARME",
+      "ltp": 119.1,
+      "direction": "down",
+      "change": -1.9,
+      "changePct": -1.57
     }
   ]
 }
