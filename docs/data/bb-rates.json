@@ -1,16 +1,16 @@
 {
-  "fetchedAt": "2026-08-13T10:35:16.900Z",
+  "fetchedAt": "2026-08-14T10:32:08.726Z",
   "exchangeRate": {
     "USD_BDT": {
       "date": "13 August, 2026",
       "am": 123.6915,
-      "pm": null
+      "pm": 122.8967
     },
     "history": [
       {
         "date": "13 August, 2026",
         "am": 123.6915,
-        "pm": null
+        "pm": 122.8967
       },
       {
         "date": "12 August, 2026",
@@ -179,12 +179,12 @@
       "ask": 412.72
     },
     "THB": {
-      "bid": 3.74,
-      "ask": 3.74
+      "bid": 3.73,
+      "ask": 3.73
     },
     "MYR": {
-      "bid": 30.27,
-      "ask": 30.27
+      "bid": 30.26,
+      "ask": 30.26
     }
   },
   "moneyMarket": {
