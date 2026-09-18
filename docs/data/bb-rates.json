@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-17T14:22:57.763Z",
+  "fetchedAt": "2026-09-18T13:44:09.593Z",
   "exchangeRate": {
     "USD_BDT": {
       "date": "17 September, 2026",
@@ -183,8 +183,8 @@
       "ask": 3.69
     },
     "MYR": {
-      "bid": 30.05,
-      "ask": 30.05
+      "bid": 29.98,
+      "ask": 29.98
     }
   },
   "moneyMarket": {
