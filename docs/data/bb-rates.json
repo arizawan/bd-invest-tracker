@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-24T14:17:48.412Z",
+  "fetchedAt": "2026-09-25T14:40:56.474Z",
   "exchangeRate": {
     "USD_BDT": {
       "date": "24 September, 2026",
@@ -179,12 +179,12 @@
       "ask": 411.09
     },
     "THB": {
-      "bid": 3.69,
-      "ask": 3.69
+      "bid": 3.68,
+      "ask": 3.68
     },
     "MYR": {
-      "bid": 30.2,
-      "ask": 30.2
+      "bid": 30.18,
+      "ask": 30.18
     }
   },
   "moneyMarket": {
