@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-22T14:39:25.422Z",
+  "fetchedAt": "2026-10-23T14:23:49.897Z",
   "exchangeRate": {
     "USD_BDT": null,
     "history": []
@@ -30,12 +30,12 @@
       "ask": 409.58
     },
     "THB": {
-      "bid": 3.65,
-      "ask": 3.65
+      "bid": 3.64,
+      "ask": 3.64
     },
     "MYR": {
-      "bid": 30.08,
-      "ask": 30.08
+      "bid": 30.06,
+      "ask": 30.06
     }
   },
   "moneyMarket": {
