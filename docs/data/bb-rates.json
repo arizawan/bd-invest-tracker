@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-06T16:55:54.231Z",
+  "fetchedAt": "2026-11-07T15:52:57.765Z",
   "exchangeRate": {
     "USD_BDT": {
       "date": "05 November, 2026",
@@ -179,12 +179,12 @@
       "ask": 414.86
     },
     "THB": {
-      "bid": 3.72,
-      "ask": 3.72
+      "bid": 3.71,
+      "ask": 3.71
     },
     "MYR": {
-      "bid": 30.73,
-      "ask": 30.73
+      "bid": 30.64,
+      "ask": 30.64
     }
   },
   "moneyMarket": {
